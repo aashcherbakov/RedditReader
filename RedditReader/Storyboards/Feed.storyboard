@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feed View Controller-->
+        <scene sceneID="8SB-78-SBv">
+            <objects>
+                <viewController storyboardIdentifier="FeedViewController" id="82K-lb-BwO" customClass="FeedViewController" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ICU-cm-lZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4OO-bM-DUH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4OO-bM-DUH" firstAttribute="top" secondItem="ICU-cm-lZ2" secondAttribute="top" id="Ipw-HP-2Dg"/>
+                            <constraint firstItem="4OO-bM-DUH" firstAttribute="leading" secondItem="tba-zJ-YfZ" secondAttribute="leading" id="Yx0-0V-eWD"/>
+                            <constraint firstItem="4OO-bM-DUH" firstAttribute="trailing" secondItem="tba-zJ-YfZ" secondAttribute="trailing" id="hfk-pV-XEJ"/>
+                            <constraint firstItem="4OO-bM-DUH" firstAttribute="bottom" secondItem="tba-zJ-YfZ" secondAttribute="bottom" id="oNC-Sf-ZoI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tba-zJ-YfZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="4OO-bM-DUH" id="dMz-fd-92n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWI-Go-5Me" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-136.80000000000001" y="151.57421289355324"/>
+        </scene>
+    </scenes>
+</document>

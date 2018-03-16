@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */; };
-		B6E96F57205B7D5D002D15B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F56205B7D5D002D15B7 /* ViewController.swift */; };
 		B6E96F5A205B7D5D002D15B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F58205B7D5D002D15B7 /* Main.storyboard */; };
 		B6E96F5C205B7D5D002D15B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F5B205B7D5D002D15B7 /* Assets.xcassets */; };
 		B6E96F5F205B7D5D002D15B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F5D205B7D5D002D15B7 /* LaunchScreen.storyboard */; };
+		B6E96F69205B7E3C002D15B7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F68205B7E3C002D15B7 /* FeedViewController.swift */; };
+		B6E96F6C205B7E96002D15B7 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F6B205B7E96002D15B7 /* Feed.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B6E96F51205B7D5D002D15B7 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6E96F56205B7D5D002D15B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B6E96F59205B7D5D002D15B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6E96F5B205B7D5D002D15B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6E96F5E205B7D5D002D15B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6E96F60205B7D5D002D15B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6E96F68205B7E3C002D15B7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		B6E96F6B205B7E96002D15B7 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,39 @@
 		B6E96F53205B7D5D002D15B7 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
+				B6E96F66205B7DE4002D15B7 /* Features */,
 				B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */,
-				B6E96F56205B7D5D002D15B7 /* ViewController.swift */,
-				B6E96F58205B7D5D002D15B7 /* Main.storyboard */,
+				B6E96F6A205B7E80002D15B7 /* Storyboards */,
 				B6E96F5B205B7D5D002D15B7 /* Assets.xcassets */,
 				B6E96F5D205B7D5D002D15B7 /* LaunchScreen.storyboard */,
 				B6E96F60205B7D5D002D15B7 /* Info.plist */,
 			);
 			path = RedditReader;
+			sourceTree = "<group>";
+		};
+		B6E96F66205B7DE4002D15B7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B6E96F67205B7DF5002D15B7 /* Feed */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B6E96F67205B7DF5002D15B7 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				B6E96F68205B7E3C002D15B7 /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		B6E96F6A205B7E80002D15B7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B6E96F58205B7D5D002D15B7 /* Main.storyboard */,
+				B6E96F6B205B7E96002D15B7 /* Feed.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +152,7 @@
 			files = (
 				B6E96F5F205B7D5D002D15B7 /* LaunchScreen.storyboard in Resources */,
 				B6E96F5C205B7D5D002D15B7 /* Assets.xcassets in Resources */,
+				B6E96F6C205B7E96002D15B7 /* Feed.storyboard in Resources */,
 				B6E96F5A205B7D5D002D15B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6E96F57205B7D5D002D15B7 /* ViewController.swift in Sources */,
+				B6E96F69205B7E3C002D15B7 /* FeedViewController.swift in Sources */,
 				B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
