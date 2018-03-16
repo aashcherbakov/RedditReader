@@ -1,5 +1,5 @@
 //
-//  FeedViewController.swift
+//  NavigationType.swift
 //  RedditReader
 //
 //  Created by Alex Shcherbakov on 3/15/18.
@@ -7,10 +7,8 @@
 //
 
 import Foundation
-import UIKit
 
-public class FeedViewController: BaseViewController {
-
-    @IBOutlet weak var tableView: UITableView!
-
+public enum NavigationType {
+    case push
+    case modal
 }
