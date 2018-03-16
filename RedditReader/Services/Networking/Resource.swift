@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias Result = ([Post]?, String) -> ()
+
 public protocol Resource {
-    func getFeed()
+    func getFeed(url: String, completion: @escaping Result)
 }

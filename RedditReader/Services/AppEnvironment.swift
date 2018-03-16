@@ -12,9 +12,10 @@ public class AppEnvironment {
 
     private weak var window: UIWindow?
     private let controllerFactory: ControllerFactory
+    private let remoteResource: Resource = RemoteResource()
 
     init() {
-        controllerFactory = ControllerFactory()
+        controllerFactory = ControllerFactory(resource: remoteResource)
     }
 
     public func run(in window: UIWindow?) {

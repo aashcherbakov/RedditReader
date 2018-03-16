@@ -11,6 +11,13 @@ import UIKit
 
 public class FeedViewController: BaseViewController {
 
+    var viewModel: FeedViewModel!
+
     @IBOutlet weak var tableView: UITableView!
 
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+
+        viewModel.loadFeed()
+    }
 }

@@ -10,6 +10,12 @@ import UIKit
 
 public class ControllerFactory {
 
+    private let resource: Resource
+
+    init(resource: Resource) {
+        self.resource = resource
+    }
+
     func controllerFor(destination: Destination) -> Presenter {
         switch destination {
         case .feed: return createFeedController()
@@ -26,7 +32,8 @@ public class ControllerFactory {
     }
 
     private func createFeedController() -> Presenter {
-        let controller = UIStoryboard(name: "Feed", bundle: nil).instantiateViewController(withIdentifier: "FeedViewController") as! Presenter
+        let controller = UIStoryboard(name: "Feed", bundle: nil).instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
+        controller.viewModel = FeedViewModel(resource: resource)
         return controller
     }
 

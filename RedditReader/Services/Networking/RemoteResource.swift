@@ -8,37 +8,34 @@
 
 import Foundation
 
-public class RemoreResource {
+public class RemoteResource: Resource {
+
+    typealias JSONDictionary = [String: Any]
 
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionTask?
 
-    typealias JSONDictionary = [String: Any]
-    typealias QueryResult = ([Post]?, String) -> ()
-
     var posts: [Post] = []
     var errorMessage = ""
 
-    func getFeed(url: String, completion: @escaping QueryResult) {
+    public func getFeed(url: String, completion: @escaping Result) {
         dataTask?.cancel()
-
         guard let url = URLComponents(string: url)?.url else { return }
+
         dataTask = defaultSession.dataTask(with: url) { data, response, error in
             defer { self.dataTask = nil }
             if let error = error {
                 self.errorMessage += "Error: " + error.localizedDescription
             } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 self.updateSearchResults(data)
-                DispatchQueue.main.async {
-                    completion(self.posts, self.errorMessage)
-                }
+                DispatchQueue.main.async { completion(self.posts, self.errorMessage) }
             }
         }
 
         dataTask?.resume()
     }
 
-    fileprivate func updateSearchResults(_ data: Data) {
+    private func updateSearchResults(_ data: Data) {
         var response: JSONDictionary?
         posts.removeAll()
 
@@ -49,22 +46,30 @@ public class RemoreResource {
             return
         }
 
-        guard let array = response!["results"] as? [Any] else {
+        guard let base = response!["data"] as? [String: Any], let postsArray = base["children"] as? [Any] else {
             errorMessage += "Dictionary does not contain results key\n"
             return
         }
+
+        parsePosts(from: postsArray)
+    }
+
+    private func parsePosts(from array: [Any]) {
         var index = 0
-        for trackDictionary in array {
-            if let trackDictionary = trackDictionary as? JSONDictionary,
-                let previewURLString = trackDictionary["previewUrl"] as? String,
-                let previewURL = URL(string: previewURLString),
-                let name = trackDictionary["trackName"] as? String,
-                let artist = trackDictionary["artistName"] as? String {
-                posts.append(Post(title: name))
+        for dictionary in array {
+            if let JSONDictionary = dictionary as? JSONDictionary,
+                let data = JSONDictionary["data"] as? JSONDictionary,
+                let thumbnail = data["thumbnail"] as? String,
+                let title = data["title"] as? String,
+                let numberOfComments = data["num_comments"] as? Int,
+                let created = data["created"] as? Int,
+                let author = data["author"] as? String {
+                posts.append(Post(title: title, author: author, entryDate: "\(created)", thumbnailUrl: thumbnail, numberOfComments: numberOfComments))
                 index += 1
             } else {
                 errorMessage += "Problem parsing trackDictionary\n"
             }
         }
     }
+
 }
