@@ -9,30 +9,19 @@
 import Foundation
 import UIKit
 
-/// Root view controller of the app.
 internal final class RootViewController: UIViewController {
-
-    // MARK: - Override properties
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return currentViewController?.preferredStatusBarStyle ?? .default
     }
 
-    // MARK: - Private properties
-
     private(set) var currentViewController: UIViewController?
     @IBOutlet weak var containerView: UIView!
-
-    // MARK: - Internal functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    /// Displays given view controller as the new root view controller of the app.
-    /// Removes current view controller from view if it exists.
-    ///
-    /// - Parameter viewController: View controller to display.
+    
     func display(_ viewController: UIViewController, completion transitionComplete: (() -> Void)?) {
         let oldViewController = currentViewController
         let newViewController = viewController

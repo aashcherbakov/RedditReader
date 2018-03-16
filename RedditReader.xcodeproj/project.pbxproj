@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB1205C2B3900F6E26C /* Resource.swift */; };
+		B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */; };
+		B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB6205C2DDC00F6E26C /* Post.swift */; };
 		B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */; };
 		B6E96F5A205B7D5D002D15B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F58205B7D5D002D15B7 /* Main.storyboard */; };
 		B6E96F5C205B7D5D002D15B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F5B205B7D5D002D15B7 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B63E7CB1205C2B3900F6E26C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
+		B63E7CB6205C2DDC00F6E26C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B6E96F51205B7D5D002D15B7 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E96F59205B7D5D002D15B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +59,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B63E7CB0205C2B2900F6E26C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B63E7CB1205C2B3900F6E26C /* Resource.swift */,
+				B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B63E7CB5205C2D8700F6E26C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B63E7CB6205C2DDC00F6E26C /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B6E96F48205B7D5D002D15B7 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +95,7 @@
 		B6E96F53205B7D5D002D15B7 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
+				B63E7CB5205C2D8700F6E26C /* Models */,
 				B6E96F7E205B8173002D15B7 /* Utilities */,
 				B6E96F71205B800F002D15B7 /* Services */,
 				B6E96F6D205B7F2E002D15B7 /* Navigation */,
@@ -126,6 +150,7 @@
 		B6E96F71205B800F002D15B7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B63E7CB0205C2B2900F6E26C /* Networking */,
 				B6E96F72205B801B002D15B7 /* AppEnvironment.swift */,
 			);
 			path = Services;
@@ -215,9 +240,12 @@
 				B6E96F69205B7E3C002D15B7 /* FeedViewController.swift in Sources */,
 				B6E96F7B205B80EE002D15B7 /* NavigationType.swift in Sources */,
 				B6E96F79205B80C8002D15B7 /* Presenter.swift in Sources */,
+				B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */,
+				B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */,
 				B6E96F73205B801B002D15B7 /* AppEnvironment.swift in Sources */,
 				B6E96F77205B8078002D15B7 /* Destination.swift in Sources */,
 				B6E96F7D205B8140002D15B7 /* BaseViewController.swift in Sources */,
+				B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */,
 				B6E96F75205B8053002D15B7 /* ControllerFactory.swift in Sources */,
 				B6E96F80205B8181002D15B7 /* LayoutExtensions.swift in Sources */,
 				B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */,
