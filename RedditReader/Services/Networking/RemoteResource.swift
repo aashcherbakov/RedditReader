@@ -64,7 +64,7 @@ public class RemoteResource: Resource {
                 let numberOfComments = data["num_comments"] as? Int,
                 let created = data["created"] as? Int,
                 let author = data["author"] as? String {
-                posts.append(Post(title: title, author: author, entryDate: "\(created)", thumbnailUrl: thumbnail, numberOfComments: numberOfComments))
+                posts.append(Post(title: title, author: author, entryDate: created, thumbnailUrl: thumbnail, numberOfComments: numberOfComments))
                 index += 1
             } else {
                 errorMessage += "Problem parsing trackDictionary\n"

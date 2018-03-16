@@ -11,6 +11,9 @@
 		B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */; };
 		B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB6205C2DDC00F6E26C /* Post.swift */; };
 		B63E7CB9205C30BB00F6E26C /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB8205C30BB00F6E26C /* FeedViewModel.swift */; };
+		B63E7CBC205C6C0500F6E26C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CBB205C6C0500F6E26C /* FeedTableViewCell.swift */; };
+		B63E7CBE205C6C2800F6E26C /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63E7CBD205C6C2800F6E26C /* FeedTableViewCell.xib */; };
+		B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CC0205C70C100F6E26C /* FeedTableCellDisplay.swift */; };
 		B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */; };
 		B6E96F5A205B7D5D002D15B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F58205B7D5D002D15B7 /* Main.storyboard */; };
 		B6E96F5C205B7D5D002D15B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F5B205B7D5D002D15B7 /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 		B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
 		B63E7CB6205C2DDC00F6E26C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B63E7CB8205C30BB00F6E26C /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		B63E7CBB205C6C0500F6E26C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		B63E7CBD205C6C2800F6E26C /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		B63E7CC0205C70C100F6E26C /* FeedTableCellDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableCellDisplay.swift; sourceTree = "<group>"; };
 		B6E96F51205B7D5D002D15B7 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E96F59205B7D5D002D15B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +82,23 @@
 				B63E7CB6205C2DDC00F6E26C /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B63E7CBA205C6BE400F6E26C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B63E7CBB205C6C0500F6E26C /* FeedTableViewCell.swift */,
+				B63E7CBD205C6C2800F6E26C /* FeedTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B63E7CBF205C70A500F6E26C /* Displays */ = {
+			isa = PBXGroup;
+			children = (
+				B63E7CC0205C70C100F6E26C /* FeedTableCellDisplay.swift */,
+			);
+			path = Displays;
 			sourceTree = "<group>";
 		};
 		B6E96F48205B7D5D002D15B7 = {
@@ -123,6 +146,8 @@
 		B6E96F67205B7DF5002D15B7 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				B63E7CBF205C70A500F6E26C /* Displays */,
+				B63E7CBA205C6BE400F6E26C /* Views */,
 				B6E96F68205B7E3C002D15B7 /* FeedViewController.swift */,
 				B63E7CB8205C30BB00F6E26C /* FeedViewModel.swift */,
 			);
@@ -227,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E96F5F205B7D5D002D15B7 /* LaunchScreen.storyboard in Resources */,
+				B63E7CBE205C6C2800F6E26C /* FeedTableViewCell.xib in Resources */,
 				B6E96F5C205B7D5D002D15B7 /* Assets.xcassets in Resources */,
 				B6E96F6C205B7E96002D15B7 /* Feed.storyboard in Resources */,
 				B6E96F5A205B7D5D002D15B7 /* Main.storyboard in Resources */,
@@ -244,8 +270,10 @@
 				B6E96F69205B7E3C002D15B7 /* FeedViewController.swift in Sources */,
 				B6E96F7B205B80EE002D15B7 /* NavigationType.swift in Sources */,
 				B6E96F79205B80C8002D15B7 /* Presenter.swift in Sources */,
+				B63E7CBC205C6C0500F6E26C /* FeedTableViewCell.swift in Sources */,
 				B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */,
 				B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */,
+				B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */,
 				B6E96F73205B801B002D15B7 /* AppEnvironment.swift in Sources */,
 				B6E96F77205B8078002D15B7 /* Destination.swift in Sources */,
 				B6E96F7D205B8140002D15B7 /* BaseViewController.swift in Sources */,

@@ -9,9 +9,11 @@
 import Foundation
 
 public struct Post {
+
     let title: String
     let author: String
-    let entryDate: String
+    let entryDate: Int
     let thumbnailUrl: String
     let numberOfComments: Int
+    
 }
