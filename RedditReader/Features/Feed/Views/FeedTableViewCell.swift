@@ -16,6 +16,14 @@ public class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
 
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        nameLabel.text = nil
+        titleLabel.text = nil
+        dateLabel.text = nil
+        commentsLabel.text = nil
+    }
+
     public override func prepareForReuse() {
         super.prepareForReuse()
 

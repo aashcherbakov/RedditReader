@@ -25,14 +25,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-ih-QyZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-ih-QyZ">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="i5R-ih-QyZ" secondAttribute="height" multiplier="1:1" id="dRk-fl-NIW"/>
-                            <constraint firstAttribute="width" constant="100" id="gLd-l9-Xct"/>
+                            <constraint firstAttribute="width" priority="750" constant="100" id="gLd-l9-Xct"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYv-UI-2Cj">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYv-UI-2Cj">
                         <rect key="frame" x="108" y="40" width="259" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -65,7 +65,6 @@
                     <constraint firstItem="i5R-ih-QyZ" firstAttribute="leading" secondItem="d2K-sd-0fM" secondAttribute="leading" id="knW-iT-hUe"/>
                     <constraint firstItem="i5R-ih-QyZ" firstAttribute="top" secondItem="d2K-sd-0fM" secondAttribute="top" id="mzJ-Jf-9Ux"/>
                     <constraint firstAttribute="bottom" secondItem="Owh-j6-dmD" secondAttribute="bottom" constant="10.5" id="odd-df-b8g"/>
-                    <constraint firstAttribute="bottom" secondItem="i5R-ih-QyZ" secondAttribute="bottom" priority="750" id="qaA-Lk-TlV"/>
                     <constraint firstAttribute="trailing" secondItem="1DT-R2-beq" secondAttribute="trailing" constant="8" id="swc-N7-J9z"/>
                     <constraint firstItem="pFD-u8-gFJ" firstAttribute="centerY" secondItem="Owh-j6-dmD" secondAttribute="centerY" id="vCM-y3-VcW"/>
                 </constraints>
