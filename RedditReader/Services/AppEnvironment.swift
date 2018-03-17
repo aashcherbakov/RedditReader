@@ -13,9 +13,12 @@ public class AppEnvironment {
     private weak var window: UIWindow?
     private let controllerFactory: ControllerFactory
     private let remoteResource: Resource = RemoteResource()
+    private let router: Router
 
     init() {
         controllerFactory = ControllerFactory(resource: remoteResource)
+        router = Router(factory: controllerFactory)
+        controllerFactory.router = router
     }
 
     public func run(in window: UIWindow?) {

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Oleks Shcherbakov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class FeedViewModel {
 
@@ -20,13 +20,15 @@ public class FeedViewModel {
     }
 
     private let resource: Resource
+    private let router: Router
 
     var onStateChange: ((State) -> Void)?
     var displays: [FeedTableCellDisplay] = []
     weak var presenter: Presenter?
 
-    init(resource: Resource) {
+    init(resource: Resource, router: Router) {
         self.resource = resource
+        self.router = router
     }
 
     func loadFeed() {
@@ -44,6 +46,17 @@ public class FeedViewModel {
         }
     }
 
+    func didSelectDisplay(at index: Int) {
+        guard index < displays.count else { return }
+
+        let display = displays[index]
+        switch display.postType {
+        case .image(let url): break
+        case .link(let url): break
+        case .undefined: break
+        }
+    }
+
     private func createDisplays(from posts: [Post]) {
         displays = posts.map {
             FeedTableCellDisplay(
@@ -51,7 +64,8 @@ public class FeedViewModel {
                 author: $0.author,
                 entryDate: $0.entryDate,
                 thumbnail: $0.thumbnailUrl,
-                comments: $0.numberOfComments
+                comments: $0.numberOfComments,
+                type: $0.type
             )
         }
     }

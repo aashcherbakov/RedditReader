@@ -44,3 +44,11 @@ public class FeedViewController: BaseViewController {
         tableView.dataSource = tableDataSource
     }
 }
+
+extension FeedViewController: UITableViewDelegate {
+
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectDisplay(at: indexPath.row)
+    }
+
+}

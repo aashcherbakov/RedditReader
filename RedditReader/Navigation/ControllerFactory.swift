@@ -11,6 +11,7 @@ import UIKit
 public class ControllerFactory {
 
     private let resource: Resource
+    var router: Router!
 
     init(resource: Resource) {
         self.resource = resource
@@ -33,7 +34,7 @@ public class ControllerFactory {
 
     private func createFeedController() -> Presenter {
         let controller = UIStoryboard(name: "Feed", bundle: nil).instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
-        let viewModel = FeedViewModel(resource: resource)
+        let viewModel = FeedViewModel(resource: resource, router: router)
         viewModel.presenter = controller
         controller.viewModel = viewModel
         return controller

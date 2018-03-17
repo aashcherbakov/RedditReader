@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class RemoteResource: Resource {
+public typealias JSONDictionary = [String: Any]
 
-    typealias JSONDictionary = [String: Any]
+public class RemoteResource: Resource {
 
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionTask?
@@ -56,22 +56,10 @@ public class RemoteResource: Resource {
     }
 
     private func parsePosts(from array: [Any]) {
-        var index = 0
         for dictionary in array {
             if let JSONDictionary = dictionary as? JSONDictionary,
-                let data = JSONDictionary["data"] as? JSONDictionary,
-                let title = data["title"] as? String,
-                let numberOfComments = data["num_comments"] as? Int,
-                let created = data["created"] as? Int,
-                let author = data["author"] as? String {
-
-                if let thumbnail = data["thumbnail"] as? String, thumbnail != "default" {
-                    posts.append(Post(title: title, author: author, entryDate: created, thumbnailUrl: thumbnail, numberOfComments: numberOfComments))
-                } else {
-                    posts.append(Post(title: title, author: author, entryDate: created, thumbnailUrl: nil, numberOfComments: numberOfComments))
-                }
-
-                index += 1
+                let data = JSONDictionary["data"] as? JSONDictionary {
+                posts.append(Post(jsonDisctionary: data))
             } else {
                 errorMessage += "Problem parsing dictionary\n"
             }
