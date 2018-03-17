@@ -16,7 +16,8 @@ public class Router {
         self.controllerFactory = factory
     }
 
-    func navigate(to destination: Destination, presenter: Presenter, navigationType: NavigationType) {
+    func navigate(to destination: Destination, presenter: Presenter?, navigationType: NavigationType) {
+        guard let presenter = presenter else { return }
         let controller = controllerFactory.controllerFor(destination: destination)
         presenter.present(controller: controller, navigationType: navigationType)
     }

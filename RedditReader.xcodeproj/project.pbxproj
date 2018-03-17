@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B62B8F65205DC26C00BAB84D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F64205DC26C00BAB84D /* Router.swift */; };
+		B62B8F68205DC81F00BAB84D /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F67205DC81F00BAB84D /* ImageViewController.swift */; };
+		B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */; };
 		B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB1205C2B3900F6E26C /* Resource.swift */; };
 		B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */; };
 		B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB6205C2DDC00F6E26C /* Post.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		B62B8F64205DC26C00BAB84D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B62B8F67205DC81F00BAB84D /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = RedditReader/Navigation/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		B63E7CB1205C2B3900F6E26C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
 		B63E7CB6205C2DDC00F6E26C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B62B8F66205DC80C00BAB84D /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				B62B8F67205DC81F00BAB84D /* ImageViewController.swift */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
 		B63E7CB0205C2B2900F6E26C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +155,10 @@
 		B6E96F66205B7DE4002D15B7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B62B8F66205DC80C00BAB84D /* ImageViewer */,
 				B6E96F67205B7DF5002D15B7 /* Feed */,
 				B6E96F7C205B8140002D15B7 /* BaseViewController.swift */,
+				B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -277,11 +291,13 @@
 			files = (
 				B63E7CB9205C30BB00F6E26C /* FeedViewModel.swift in Sources */,
 				B6E96F69205B7E3C002D15B7 /* FeedViewController.swift in Sources */,
+				B62B8F68205DC81F00BAB84D /* ImageViewController.swift in Sources */,
 				B6E96F7B205B80EE002D15B7 /* NavigationType.swift in Sources */,
 				B6E96F79205B80C8002D15B7 /* Presenter.swift in Sources */,
 				B63E7CBC205C6C0500F6E26C /* FeedTableViewCell.swift in Sources */,
 				B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */,
 				B62B8F65205DC26C00BAB84D /* Router.swift in Sources */,
+				B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */,
 				B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */,
 				B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */,
 				B6E96F73205B801B002D15B7 /* AppEnvironment.swift in Sources */,

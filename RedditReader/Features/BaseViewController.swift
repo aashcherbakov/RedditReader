@@ -37,7 +37,7 @@ extension BaseViewController: Presenter {
         case .modal:
             present(controller, animated: true, completion: nil)
         case .push:
-            controller.navigationController?.pushViewController(controller, animated: true)
+            navigationController?.pushViewController(controller, animated: true)
         }
     }
 

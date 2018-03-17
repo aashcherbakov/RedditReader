@@ -11,5 +11,6 @@ import Foundation
 public enum Destination {
 
     case feed
-
+    case imageView
+    
 }

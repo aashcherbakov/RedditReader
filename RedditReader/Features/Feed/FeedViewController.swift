@@ -42,6 +42,7 @@ public class FeedViewController: BaseViewController {
         tableView.estimatedRowHeight = Constants.rowHeight
         tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedTableViewCell")
         tableView.dataSource = tableDataSource
+        tableView.delegate = self
     }
 }
 

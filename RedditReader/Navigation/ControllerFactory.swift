@@ -20,6 +20,7 @@ public class ControllerFactory {
     func controllerFor(destination: Destination) -> Presenter {
         switch destination {
         case .feed: return createFeedController()
+        case .imageView: return createImageViewController()
         }
     }
 
@@ -37,6 +38,12 @@ public class ControllerFactory {
         let viewModel = FeedViewModel(resource: resource, router: router)
         viewModel.presenter = controller
         controller.viewModel = viewModel
+        let navigationController = BaseNavigationController(rootViewController: controller)
+        return navigationController
+    }
+
+    private func createImageViewController() -> Presenter {
+        let controller = UIStoryboard(name: "Feed", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
         return controller
     }
 
