@@ -20,6 +20,7 @@ public class RemoteResource: Resource {
 
     public func getFeed(url: String, completion: @escaping Result) {
         dataTask?.cancel()
+
         guard let url = URLComponents(string: url)?.url else { return }
 
         dataTask = defaultSession.dataTask(with: url) { data, response, error in
@@ -59,15 +60,20 @@ public class RemoteResource: Resource {
         for dictionary in array {
             if let JSONDictionary = dictionary as? JSONDictionary,
                 let data = JSONDictionary["data"] as? JSONDictionary,
-                let thumbnail = data["thumbnail"] as? String,
                 let title = data["title"] as? String,
                 let numberOfComments = data["num_comments"] as? Int,
                 let created = data["created"] as? Int,
                 let author = data["author"] as? String {
-                posts.append(Post(title: title, author: author, entryDate: created, thumbnailUrl: thumbnail, numberOfComments: numberOfComments))
+
+                if let thumbnail = data["thumbnail"] as? String, thumbnail != "default" {
+                    posts.append(Post(title: title, author: author, entryDate: created, thumbnailUrl: thumbnail, numberOfComments: numberOfComments))
+                } else {
+                    posts.append(Post(title: title, author: author, entryDate: created, thumbnailUrl: nil, numberOfComments: numberOfComments))
+                }
+
                 index += 1
             } else {
-                errorMessage += "Problem parsing trackDictionary\n"
+                errorMessage += "Problem parsing dictionary\n"
             }
         }
     }

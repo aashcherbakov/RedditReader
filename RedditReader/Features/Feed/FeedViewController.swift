@@ -11,6 +11,10 @@ import UIKit
 
 public class FeedViewController: BaseViewController {
 
+    private struct Constants {
+        static let rowHeight = 60 as CGFloat
+    }
+
     var viewModel: FeedViewModel!
     var tableDataSource: FeedTableDataSource?
 
@@ -35,7 +39,7 @@ public class FeedViewController: BaseViewController {
 
     private func setupDesign() {
         tableDataSource = FeedTableDataSource(viewModel: viewModel)
-        tableView.estimatedRowHeight = 60
+        tableView.estimatedRowHeight = Constants.rowHeight
         tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedTableViewCell")
         tableView.dataSource = tableDataSource
     }

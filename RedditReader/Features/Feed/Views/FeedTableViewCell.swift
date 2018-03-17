@@ -35,6 +35,7 @@ public class FeedTableViewCell: UITableViewCell {
         titleLabel.text = display.title
         dateLabel.text = display.entryDate
         commentsLabel.text = display.comments
+        postImageView.loadImageFrom(url: display.thumbnailUrl)
     }
 
 }

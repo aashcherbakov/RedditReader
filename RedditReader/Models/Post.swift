@@ -13,7 +13,7 @@ public struct Post {
     let title: String
     let author: String
     let entryDate: Int
-    let thumbnailUrl: String
+    let thumbnailUrl: String?
     let numberOfComments: Int
     
 }

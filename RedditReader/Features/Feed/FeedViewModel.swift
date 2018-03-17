@@ -10,17 +10,20 @@ import Foundation
 
 public class FeedViewModel {
 
+    private struct Constants {
+        static let feedUrl = "https://www.reddit.com/top.json"
+    }
+
     enum State {
         case error
         case complete
     }
 
     private let resource: Resource
-    private var posts: [Post]?
 
     var onStateChange: ((State) -> Void)?
-    weak var presenter: Presenter?
     var displays: [FeedTableCellDisplay] = []
+    weak var presenter: Presenter?
 
     init(resource: Resource) {
         self.resource = resource
@@ -28,12 +31,11 @@ public class FeedViewModel {
 
     func loadFeed() {
         presenter?.showActivityIndicator()
-        resource.getFeed(url: "http://reddit.com/r/redditdev.json?limit=50") { [weak self]
-            posts, error in
+        resource.getFeed(url: Constants.feedUrl) {
+            [weak self] posts, error in
 
             self?.presenter?.hideActivityIndicator()
             if let posts = posts {
-                self?.posts = posts
                 self?.createDisplays(from: posts)
                 self?.onStateChange?(.complete)
             } else {

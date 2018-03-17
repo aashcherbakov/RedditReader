@@ -11,5 +11,7 @@ import Foundation
 public typealias Result = ([Post]?, String) -> ()
 
 public protocol Resource {
+
     func getFeed(url: String, completion: @escaping Result)
+    
 }
