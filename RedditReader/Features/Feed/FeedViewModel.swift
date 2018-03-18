@@ -63,7 +63,7 @@ public class FeedViewModel {
         let display = displays[index]
         switch display.postType {
         case .image(let url):
-            router.navigate(to: .webView, presenter: presenter, navigationType: .push, parameters: WebViewParameters(imageUrl: url))
+            router.navigate(to: .imageView, presenter: presenter, navigationType: .push, parameters: WebViewParameters(imageUrl: url))
         case .link(let url):
             router.navigate(to: .webView, presenter: presenter, navigationType: .push, parameters: WebViewParameters(imageUrl: url))
         case .undefined: break

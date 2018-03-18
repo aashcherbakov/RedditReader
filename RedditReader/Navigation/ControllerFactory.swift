@@ -30,6 +30,7 @@ public class ControllerFactory {
         switch destination {
         case .feed: return createFeedController()
         case .webView: return createWebViewController(with: parameters)
+        case .imageView: return createImageViewController(with: parameters)
         }
     }
 
@@ -64,4 +65,10 @@ public class ControllerFactory {
         return controller
     }
 
+    private func createImageViewController(with parameters: Transferable?) -> Presenter {
+        let controller = UIStoryboard(name: "Feed", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+        let viewModel = ImageViewViewModel(presenter: controller, parameters: parameters)
+        controller.viewModel = viewModel
+        return controller
+    }
 }

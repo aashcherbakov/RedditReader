@@ -16,5 +16,6 @@ public enum Destination {
 
     case feed
     case webView
+    case imageView
     
 }

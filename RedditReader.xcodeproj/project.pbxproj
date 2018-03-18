@@ -12,6 +12,8 @@
 		B60FEAA8205EDEBF001E2BAB /* PaginationControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */; };
 		B60FEAAA205EEEFC001E2BAB /* FeedUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA9205EEEFC001E2BAB /* FeedUrlFactory.swift */; };
 		B60FEAAC205F2649001E2BAB /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAAB205F2649001E2BAB /* LayoutExtensions.swift */; };
+		B60FEAAF205F2BF5001E2BAB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAAE205F2BF5001E2BAB /* ImageViewController.swift */; };
+		B60FEAB1205F2F03001E2BAB /* ImageViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAB0205F2F03001E2BAB /* ImageViewViewModel.swift */; };
 		B62B8F65205DC26C00BAB84D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F64205DC26C00BAB84D /* Router.swift */; };
 		B62B8F68205DC81F00BAB84D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F67205DC81F00BAB84D /* WebViewController.swift */; };
 		B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */; };
@@ -48,6 +50,8 @@
 		B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaginationControl.xib; sourceTree = "<group>"; };
 		B60FEAA9205EEEFC001E2BAB /* FeedUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUrlFactory.swift; sourceTree = "<group>"; };
 		B60FEAAB205F2649001E2BAB /* LayoutExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
+		B60FEAAE205F2BF5001E2BAB /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		B60FEAB0205F2F03001E2BAB /* ImageViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewViewModel.swift; sourceTree = "<group>"; };
 		B62B8F64205DC26C00BAB84D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B62B8F67205DC81F00BAB84D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = RedditReader/Navigation/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
@@ -91,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B60FEAAD205F2BE5001E2BAB /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				B60FEAAE205F2BF5001E2BAB /* ImageViewController.swift */,
+				B60FEAB0205F2F03001E2BAB /* ImageViewViewModel.swift */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
 		B62B8F66205DC80C00BAB84D /* WebViewer */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +194,7 @@
 		B6E96F66205B7DE4002D15B7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B60FEAAD205F2BE5001E2BAB /* ImageViewer */,
 				B62B8F66205DC80C00BAB84D /* WebViewer */,
 				B6E96F67205B7DF5002D15B7 /* Feed */,
 				B6E96F7C205B8140002D15B7 /* BaseViewController.swift */,
@@ -329,8 +343,10 @@
 				B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */,
 				B62B8F65205DC26C00BAB84D /* Router.swift in Sources */,
 				B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */,
+				B60FEAAF205F2BF5001E2BAB /* ImageViewController.swift in Sources */,
 				B60FEAA4205E09D2001E2BAB /* PostBatch.swift in Sources */,
 				B60FEAAA205EEEFC001E2BAB /* FeedUrlFactory.swift in Sources */,
+				B60FEAB1205F2F03001E2BAB /* ImageViewViewModel.swift in Sources */,
 				B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */,
 				B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */,
 				B6E96F73205B801B002D15B7 /* AppEnvironment.swift in Sources */,
@@ -483,7 +499,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KLYA89ALPQ;
 				INFOPLIST_FILE = RedditReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.1lastDay.RedditReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -497,7 +515,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KLYA89ALPQ;
 				INFOPLIST_FILE = RedditReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.1lastDay.RedditReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";

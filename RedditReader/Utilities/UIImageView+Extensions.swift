@@ -12,8 +12,13 @@ extension UIImageView {
 
     /// Loads image from provided url
     func loadImageFrom(url: String?) {
+        let activityIndicator = createActivityIndicator()
+
         guard let url = url else { return }
         URLSession.shared.dataTask(with: NSURL(string: url)! as URL, completionHandler: { (data, response, error) -> Void in
+
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
 
             if error != nil { return }
             DispatchQueue.main.async(execute: { () -> Void in
@@ -22,6 +27,15 @@ extension UIImageView {
             })
 
         }).resume()
+    }
+
+    private func createActivityIndicator() -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        addSubview(activityIndicator)
+        activityIndicator.centerIn(self)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        return activityIndicator
     }
     
 }

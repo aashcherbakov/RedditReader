@@ -85,5 +85,46 @@
             </objects>
             <point key="canvasLocation" x="655.20000000000005" y="148.87556221889056"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="tca-lN-0eI">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" id="FfD-In-Z1H" customClass="ImageViewController" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="418-PQ-fdo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-9r-pVH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="601"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcd-TL-FfY">
+                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                                <state key="normal" title="Save Image"/>
+                                <connections>
+                                    <action selector="onSaveTap:" destination="FfD-In-Z1H" eventType="touchUpInside" id="hhv-Nu-OmX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A6c-9r-pVH" firstAttribute="trailing" secondItem="xjm-ka-cyU" secondAttribute="trailing" id="CFO-gg-Xds"/>
+                            <constraint firstItem="A6c-9r-pVH" firstAttribute="leading" secondItem="xjm-ka-cyU" secondAttribute="leading" id="KlG-s9-eDK"/>
+                            <constraint firstItem="Pcd-TL-FfY" firstAttribute="leading" secondItem="xjm-ka-cyU" secondAttribute="leading" id="Ly6-zf-APc"/>
+                            <constraint firstItem="Pcd-TL-FfY" firstAttribute="trailing" secondItem="xjm-ka-cyU" secondAttribute="trailing" id="WXc-84-5g2"/>
+                            <constraint firstItem="xjm-ka-cyU" firstAttribute="bottom" secondItem="A6c-9r-pVH" secondAttribute="bottom" constant="66" id="WiI-Cv-nIC"/>
+                            <constraint firstItem="Pcd-TL-FfY" firstAttribute="bottom" secondItem="xjm-ka-cyU" secondAttribute="bottom" id="bAP-dt-fux"/>
+                            <constraint firstItem="Pcd-TL-FfY" firstAttribute="top" secondItem="A6c-9r-pVH" secondAttribute="bottom" id="jAK-T7-qd8"/>
+                            <constraint firstItem="A6c-9r-pVH" firstAttribute="top" secondItem="418-PQ-fdo" secondAttribute="top" id="s5G-fK-cKh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xjm-ka-cyU"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="A6c-9r-pVH" id="3Zd-Ab-I4e"/>
+                        <outlet property="saveButton" destination="Pcd-TL-FfY" id="DYe-bJ-0fX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LNB-ty-aQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1461.5999999999999" y="151.57421289355324"/>
+        </scene>
     </scenes>
 </document>
