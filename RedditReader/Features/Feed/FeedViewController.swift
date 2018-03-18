@@ -12,7 +12,7 @@ import UIKit
 public class FeedViewController: BaseViewController {
 
     private struct Constants {
-        static let rowHeight = 60 as CGFloat
+        static let rowHeight = 100 as CGFloat
     }
 
     var viewModel: FeedViewModel!
@@ -50,6 +50,10 @@ extension FeedViewController: UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectDisplay(at: indexPath.row)
+    }
+
+    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constants.rowHeight
     }
 
 }

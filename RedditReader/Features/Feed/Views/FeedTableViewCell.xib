@@ -11,48 +11,47 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="100" id="nnw-U6-UcF" customClass="FeedTableViewCell" customModule="RedditReader" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="124" id="nnw-U6-UcF" customClass="FeedTableViewCell" customModule="RedditReader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nnw-U6-UcF" id="d2K-sd-0fM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="123.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DT-R2-beq">
-                        <rect key="frame" x="116" y="11" width="251" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DT-R2-beq">
+                        <rect key="frame" x="116" y="11" width="251" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-ih-QyZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-ih-QyZ">
                         <rect key="frame" x="8" y="8" width="100" height="83.5"/>
                         <constraints>
                             <constraint firstAttribute="height" priority="250" constant="83.5" id="ROy-x2-uAU"/>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="gLd-l9-Xct"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYv-UI-2Cj">
-                        <rect key="frame" x="116" y="40" width="251" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYv-UI-2Cj">
+                        <rect key="frame" x="116" y="32.5" width="251" height="61.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFD-u8-gFJ">
-                        <rect key="frame" x="325" y="68" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="339" y="101" width="28" height="12"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-j6-dmD">
-                        <rect key="frame" x="116" y="68" width="201" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="116" y="101" width="215" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="QYv-UI-2Cj" firstAttribute="leading" secondItem="1DT-R2-beq" secondAttribute="leading" id="0mQ-jG-kMK"/>
-                    <constraint firstItem="Owh-j6-dmD" firstAttribute="top" secondItem="QYv-UI-2Cj" secondAttribute="bottom" constant="7" id="31I-1s-Gfw"/>
                     <constraint firstItem="QYv-UI-2Cj" firstAttribute="top" secondItem="1DT-R2-beq" secondAttribute="bottom" constant="8" id="4zR-Am-Zlq"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i5R-ih-QyZ" secondAttribute="bottom" constant="8" id="83X-dS-6Ga"/>
                     <constraint firstItem="1DT-R2-beq" firstAttribute="leading" secondItem="i5R-ih-QyZ" secondAttribute="trailing" constant="8" id="88q-KH-eax"/>
@@ -76,7 +75,7 @@
                 <outlet property="postImageView" destination="i5R-ih-QyZ" id="Jwf-fJ-uGs"/>
                 <outlet property="titleLabel" destination="QYv-UI-2Cj" id="Hc8-0c-8qQ"/>
             </connections>
-            <point key="canvasLocation" x="-211" y="0.0"/>
+            <point key="canvasLocation" x="-211.5" y="12"/>
         </tableViewCell>
     </objects>
 </document>

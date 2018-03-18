@@ -30,7 +30,7 @@ public struct Post {
 
     init(jsonDisctionary: JSONDictionary) {
         self.numberOfComments = jsonDisctionary["num_comments"] as? Int ?? 0
-        self.entryDate = jsonDisctionary["created"] as? Int ?? 0
+        self.entryDate = jsonDisctionary["created_utc"] as? Int ?? 0
         self.author = jsonDisctionary["author"] as? String ?? ""
         self.title = jsonDisctionary["title"] as? String
 
@@ -38,9 +38,7 @@ public struct Post {
         let contentUrl = jsonDisctionary["url"] as? String
 
         self.type = Post.getTypeFrom(hint: hint, url: contentUrl) ?? .undefined
-
-        let thumbnail = jsonDisctionary["thumbnail"] as? String
-        self.thumbnailUrl = thumbnail == "default" ? nil : thumbnail
+        self.thumbnailUrl = Post.getTumbnailUrl(from: jsonDisctionary["thumbnail"] as? String)
     }
 
     private static func getTypeFrom(hint: String?, url: String?) -> PostType? {
@@ -52,5 +50,13 @@ public struct Post {
         case .image: return PostType.image(url: url)
         case .link: return PostType.link(url: url)
         }
+    }
+
+    private static func getTumbnailUrl(from url: String?) -> String? {
+        guard let url = url, url.hasPrefix("http") else {
+            return nil
+        }
+
+        return url
     }
 }

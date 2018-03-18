@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60FEAA4205E09D2001E2BAB /* PostBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA3205E09D2001E2BAB /* PostBatch.swift */; };
 		B62B8F65205DC26C00BAB84D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F64205DC26C00BAB84D /* Router.swift */; };
 		B62B8F68205DC81F00BAB84D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F67205DC81F00BAB84D /* WebViewController.swift */; };
 		B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B60FEAA3205E09D2001E2BAB /* PostBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBatch.swift; sourceTree = "<group>"; };
 		B62B8F64205DC26C00BAB84D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B62B8F67205DC81F00BAB84D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = RedditReader/Navigation/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B63E7CB6205C2DDC00F6E26C /* Post.swift */,
+				B60FEAA3205E09D2001E2BAB /* PostBatch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */,
 				B62B8F65205DC26C00BAB84D /* Router.swift in Sources */,
 				B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */,
+				B60FEAA4205E09D2001E2BAB /* PostBatch.swift in Sources */,
 				B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */,
 				B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */,
 				B6E96F73205B801B002D15B7 /* AppEnvironment.swift in Sources */,

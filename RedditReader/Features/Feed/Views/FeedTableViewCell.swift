@@ -18,16 +18,14 @@ public class FeedTableViewCell: UITableViewCell {
 
     public override func awakeFromNib() {
         super.awakeFromNib()
-        nameLabel.text = nil
-        titleLabel.text = nil
-        dateLabel.text = nil
-        commentsLabel.text = nil
+
+        resetValues()
     }
 
     public override func prepareForReuse() {
         super.prepareForReuse()
 
-        postImageView.image = nil
+        resetValues()
     }
 
     func layout(with display: FeedTableCellDisplay) {
@@ -36,6 +34,14 @@ public class FeedTableViewCell: UITableViewCell {
         dateLabel.text = display.entryDate
         commentsLabel.text = display.comments
         postImageView.loadImageFrom(url: display.thumbnailUrl)
+    }
+
+    private func resetValues() {
+        nameLabel.text = nil
+        titleLabel.text = nil
+        dateLabel.text = nil
+        commentsLabel.text = nil
+        postImageView.image = nil
     }
 
 }
