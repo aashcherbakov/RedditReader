@@ -40,20 +40,39 @@
             </objects>
             <point key="canvasLocation" x="-136.80000000000001" y="151.57421289355324"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="8Hs-Ta-kfh">
             <objects>
-                <viewController storyboardIdentifier="ImageViewController" id="Cnz-nu-REE" customClass="ImageViewController" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="Cnz-nu-REE" customClass="WebViewController" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bib-1C-WW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSj-MO-x2R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WSj-MO-x2R" firstAttribute="bottom" secondItem="56o-ah-cHF" secondAttribute="bottom" id="IPX-fx-gGE"/>
+                            <constraint firstItem="WSj-MO-x2R" firstAttribute="leading" secondItem="56o-ah-cHF" secondAttribute="leading" id="SOS-Pf-JCs"/>
+                            <constraint firstItem="WSj-MO-x2R" firstAttribute="trailing" secondItem="56o-ah-cHF" secondAttribute="trailing" id="WTJ-is-ZgH"/>
+                            <constraint firstItem="WSj-MO-x2R" firstAttribute="top" secondItem="bib-1C-WW6" secondAttribute="top" id="WgW-TS-gM4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="56o-ah-cHF"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="WSj-MO-x2R" id="gcC-2a-cUj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3B-EF-h6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656" y="149"/>
+            <point key="canvasLocation" x="655.20000000000005" y="148.87556221889056"/>
         </scene>
     </scenes>
 </document>

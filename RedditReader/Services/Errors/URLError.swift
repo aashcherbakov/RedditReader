@@ -1,15 +1,13 @@
 //
-//  ImageViewController.swift
+//  URLError.swift
 //  RedditReader
 //
 //  Created by Alex Shcherbakov on 3/17/18.
 //  Copyright © 2018 Oleks Shcherbakov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class ImageViewController: BaseViewController {
-
-
-
+public enum InvalidUrlError: Error {
+    case invalidString(url: String)
 }

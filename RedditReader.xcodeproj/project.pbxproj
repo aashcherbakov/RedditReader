@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B62B8F65205DC26C00BAB84D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F64205DC26C00BAB84D /* Router.swift */; };
-		B62B8F68205DC81F00BAB84D /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F67205DC81F00BAB84D /* ImageViewController.swift */; };
+		B62B8F68205DC81F00BAB84D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F67205DC81F00BAB84D /* WebViewController.swift */; };
 		B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */; };
+		B62B8F6C205DE43B00BAB84D /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F6B205DE43B00BAB84D /* WebViewViewModel.swift */; };
+		B62B8F6F205DE55500BAB84D /* URLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F6E205DE55500BAB84D /* URLError.swift */; };
+		B62B8F71205DE63C00BAB84D /* Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F70205DE63C00BAB84D /* Transferable.swift */; };
 		B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB1205C2B3900F6E26C /* Resource.swift */; };
 		B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */; };
 		B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB6205C2DDC00F6E26C /* Post.swift */; };
@@ -37,8 +40,11 @@
 
 /* Begin PBXFileReference section */
 		B62B8F64205DC26C00BAB84D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		B62B8F67205DC81F00BAB84D /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		B62B8F67205DC81F00BAB84D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = RedditReader/Navigation/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
+		B62B8F6B205DE43B00BAB84D /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
+		B62B8F6E205DE55500BAB84D /* URLError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLError.swift; sourceTree = "<group>"; };
+		B62B8F70205DE63C00BAB84D /* Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transferable.swift; sourceTree = "<group>"; };
 		B63E7CB1205C2B3900F6E26C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
 		B63E7CB6205C2DDC00F6E26C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -80,9 +86,18 @@
 		B62B8F66205DC80C00BAB84D /* ImageViewer */ = {
 			isa = PBXGroup;
 			children = (
-				B62B8F67205DC81F00BAB84D /* ImageViewController.swift */,
+				B62B8F67205DC81F00BAB84D /* WebViewController.swift */,
+				B62B8F6B205DE43B00BAB84D /* WebViewViewModel.swift */,
 			);
 			path = ImageViewer;
+			sourceTree = "<group>";
+		};
+		B62B8F6D205DE53000BAB84D /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				B62B8F6E205DE55500BAB84D /* URLError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		B63E7CB0205C2B2900F6E26C /* Networking */ = {
@@ -193,6 +208,7 @@
 				B6E96F78205B80C8002D15B7 /* Presenter.swift */,
 				B6E96F7A205B80EE002D15B7 /* NavigationType.swift */,
 				B62B8F64205DC26C00BAB84D /* Router.swift */,
+				B62B8F70205DE63C00BAB84D /* Transferable.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -200,6 +216,7 @@
 		B6E96F71205B800F002D15B7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B62B8F6D205DE53000BAB84D /* Errors */,
 				B63E7CB0205C2B2900F6E26C /* Networking */,
 				B6E96F72205B801B002D15B7 /* AppEnvironment.swift */,
 			);
@@ -291,16 +308,18 @@
 			files = (
 				B63E7CB9205C30BB00F6E26C /* FeedViewModel.swift in Sources */,
 				B6E96F69205B7E3C002D15B7 /* FeedViewController.swift in Sources */,
-				B62B8F68205DC81F00BAB84D /* ImageViewController.swift in Sources */,
+				B62B8F68205DC81F00BAB84D /* WebViewController.swift in Sources */,
 				B6E96F7B205B80EE002D15B7 /* NavigationType.swift in Sources */,
 				B6E96F79205B80C8002D15B7 /* Presenter.swift in Sources */,
 				B63E7CBC205C6C0500F6E26C /* FeedTableViewCell.swift in Sources */,
+				B62B8F71205DE63C00BAB84D /* Transferable.swift in Sources */,
 				B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */,
 				B62B8F65205DC26C00BAB84D /* Router.swift in Sources */,
 				B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */,
 				B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */,
 				B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */,
 				B6E96F73205B801B002D15B7 /* AppEnvironment.swift in Sources */,
+				B62B8F6F205DE55500BAB84D /* URLError.swift in Sources */,
 				B6E96F77205B8078002D15B7 /* Destination.swift in Sources */,
 				B6E96F7D205B8140002D15B7 /* BaseViewController.swift in Sources */,
 				B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */,
@@ -308,6 +327,7 @@
 				B6E96F75205B8053002D15B7 /* ControllerFactory.swift in Sources */,
 				B6E96F80205B8181002D15B7 /* LayoutExtensions.swift in Sources */,
 				B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */,
+				B62B8F6C205DE43B00BAB84D /* WebViewViewModel.swift in Sources */,
 				B6E96F70205B7F83002D15B7 /* RootViewController.swift in Sources */,
 				B63E7CC3205C873800F6E26C /* FeedTableDataSource.swift in Sources */,
 			);

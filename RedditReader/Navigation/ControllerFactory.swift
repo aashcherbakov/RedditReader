@@ -17,10 +17,10 @@ public class ControllerFactory {
         self.resource = resource
     }
 
-    func controllerFor(destination: Destination) -> Presenter {
+    func controllerFor(destination: Destination, parameters: Transferable? = nil) -> Presenter {
         switch destination {
         case .feed: return createFeedController()
-        case .imageView: return createImageViewController()
+        case .imageView: return createImageViewController(with: parameters)
         }
     }
 
@@ -42,8 +42,10 @@ public class ControllerFactory {
         return navigationController
     }
 
-    private func createImageViewController() -> Presenter {
-        let controller = UIStoryboard(name: "Feed", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+    private func createImageViewController(with parameters: Transferable?) -> Presenter {
+        let controller = UIStoryboard(name: "Feed", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        let viewModel = WebViewViewModel(presenter: controller, parameters: parameters)
+        controller.viewModel = viewModel
         return controller
     }
 
