@@ -36,14 +36,14 @@ public class FeedViewModel {
 
     func loadFeed() {
         presenter?.showActivityIndicator()
-        resource.getFeed(url: Constants.feedUrl, completion: completion)
+        resource.getFeed(url: Constants.feedUrl, completion: loadBatchCompleted)
     }
 
     func loadNext() {
         guard let after = batch?.after, let count = batch?.distance else { return }
         presenter?.showActivityIndicator()
         distance += Constants.batchSize
-        resource.getFeed(url: Constants.feedUrl + "?count=\(count + Constants.batchSize)&after=\(after)", completion: completion)
+        resource.getFeed(url: Constants.feedUrl + "?count=\(count + Constants.batchSize)&after=\(after)", completion: loadBatchCompleted)
     }
 
     func loadPrevious() {
@@ -58,18 +58,11 @@ public class FeedViewModel {
             url = Constants.feedUrl
         }
 
-        resource.getFeed(url: url, completion: completion)
+        resource.getFeed(url: url, completion: loadBatchCompleted)
     }
 
-    private func completion(newBatch: PostBatch?, error: String) {
-        presenter?.hideActivityIndicator()
-        if let loadedBatch = newBatch {
-            batch = loadedBatch
-            createDisplays(from: loadedBatch.posts)
-            onStateChange?(.complete(pages: createPagesDisplay()))
-        } else {
-            onStateChange?(.error)
-        }
+    func shouldDisplayPreviousButton() -> Bool {
+        return distance <= 25
     }
 
     func didSelectDisplay(at index: Int) {
@@ -85,8 +78,15 @@ public class FeedViewModel {
         }
     }
 
-    func shouldDisplayPreviousButton() -> Bool {
-        return distance <= 25
+    private func loadBatchCompleted(newBatch: PostBatch?, error: String) {
+        presenter?.hideActivityIndicator()
+        if let loadedBatch = newBatch {
+            batch = loadedBatch
+            createDisplays(from: loadedBatch.posts)
+            onStateChange?(.complete(pages: createPagesDisplay()))
+        } else {
+            onStateChange?(.error)
+        }
     }
 
     private func createPagesDisplay() -> String {

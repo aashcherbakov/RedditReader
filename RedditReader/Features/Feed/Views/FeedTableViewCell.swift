@@ -10,11 +10,16 @@ import UIKit
 
 public class FeedTableViewCell: UITableViewCell {
 
+    private struct Constants {
+        static let defaultImageWidth: CGFloat = 83.5
+    }
+
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
+    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
 
     public override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +38,12 @@ public class FeedTableViewCell: UITableViewCell {
         titleLabel.text = display.title
         dateLabel.text = display.entryDate
         commentsLabel.text = display.comments
-        postImageView.loadImageFrom(url: display.thumbnailUrl)
+
+        if let url = display.thumbnailUrl {
+            postImageView.loadImageFrom(url: url)
+        } else {
+            imageViewWidthConstraint.constant = 0
+        }
     }
 
     private func resetValues() {
@@ -42,6 +52,7 @@ public class FeedTableViewCell: UITableViewCell {
         dateLabel.text = nil
         commentsLabel.text = nil
         postImageView.image = nil
+        imageViewWidthConstraint.constant = Constants.defaultImageWidth
     }
 
 }

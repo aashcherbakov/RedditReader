@@ -71,6 +71,7 @@
             <connections>
                 <outlet property="commentsLabel" destination="pFD-u8-gFJ" id="ubL-34-VSe"/>
                 <outlet property="dateLabel" destination="Owh-j6-dmD" id="r19-tp-7GF"/>
+                <outlet property="imageViewWidthConstraint" destination="gLd-l9-Xct" id="WwG-XE-Gta"/>
                 <outlet property="nameLabel" destination="1DT-R2-beq" id="LjD-JS-TDa"/>
                 <outlet property="postImageView" destination="i5R-ih-QyZ" id="Jwf-fJ-uGs"/>
                 <outlet property="titleLabel" destination="QYv-UI-2Cj" id="Hc8-0c-8qQ"/>
