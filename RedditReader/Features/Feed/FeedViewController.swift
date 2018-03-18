@@ -19,7 +19,8 @@ public class FeedViewController: BaseViewController {
     var tableDataSource: FeedTableDataSource?
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var paginationControl: PaginationControl!
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
 

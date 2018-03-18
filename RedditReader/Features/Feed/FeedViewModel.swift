@@ -21,6 +21,7 @@ public class FeedViewModel {
 
     private let resource: Resource
     private let router: Router
+    private var batch: PostBatch?
 
     var onStateChange: ((State) -> Void)?
     var displays: [FeedTableCellDisplay] = []
@@ -33,16 +34,28 @@ public class FeedViewModel {
 
     func loadFeed() {
         presenter?.showActivityIndicator()
-        resource.getFeed(url: Constants.feedUrl) {
-            [weak self] posts, error in
+        resource.getFeed(url: Constants.feedUrl, completion: completion)
+    }
 
-            self?.presenter?.hideActivityIndicator()
-            if let posts = posts {
-                self?.createDisplays(from: posts)
-                self?.onStateChange?(.complete)
-            } else {
-                self?.onStateChange?(.error)
-            }
+    func loadNext() {
+        guard let after = batch?.after, let count = batch?.distance else { return }
+        presenter?.showActivityIndicator()
+        resource.getFeed(url: Constants.feedUrl + "?count=\(count + 25)&after=\(after)", completion: completion)
+    }
+
+    func loadPrevious() {
+        guard let before = batch?.before, let count = batch?.distance else { return }
+        presenter?.showActivityIndicator()
+        resource.getFeed(url: Constants.feedUrl + "?count=\(count - 25)&before=\(before)", completion: completion)
+    }
+
+    private func completion(batch: PostBatch?, error: String) {
+        presenter?.hideActivityIndicator()
+        if let batch = batch {
+            createDisplays(from: batch.posts)
+            onStateChange?(.complete)
+        } else {
+            onStateChange?(.error)
         }
     }
 

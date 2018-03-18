@@ -10,11 +10,15 @@ import Foundation
 
 public struct PostBatch {
 
-//    let after: String
-//    let before: String
-//    let posts: [Post]
+    let after: String?
+    let before: String?
+    let distance: Int?
+    let posts: [Post]
 
-    init(jsonDictionary: JSONDictionary) {
-
+    init(posts: [Post], after: String?, before: String?, distance: Int?) {
+        self.posts = posts
+        self.after = after
+        self.before = before
+        self.distance = distance
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias Result = ([Post]?, String) -> ()
+public typealias Result = (PostBatch?, String) -> ()
 
 public protocol Resource {
 

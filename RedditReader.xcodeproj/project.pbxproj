@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B60FEAA4205E09D2001E2BAB /* PostBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA3205E09D2001E2BAB /* PostBatch.swift */; };
+		B60FEAA6205EDE9F001E2BAB /* PaginationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA5205EDE9F001E2BAB /* PaginationControl.swift */; };
+		B60FEAA8205EDEBF001E2BAB /* PaginationControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */; };
 		B62B8F65205DC26C00BAB84D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F64205DC26C00BAB84D /* Router.swift */; };
 		B62B8F68205DC81F00BAB84D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F67205DC81F00BAB84D /* WebViewController.swift */; };
 		B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		B60FEAA3205E09D2001E2BAB /* PostBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBatch.swift; sourceTree = "<group>"; };
+		B60FEAA5205EDE9F001E2BAB /* PaginationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationControl.swift; sourceTree = "<group>"; };
+		B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaginationControl.xib; sourceTree = "<group>"; };
 		B62B8F64205DC26C00BAB84D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B62B8F67205DC81F00BAB84D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = RedditReader/Navigation/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
@@ -125,6 +129,8 @@
 			children = (
 				B63E7CBB205C6C0500F6E26C /* FeedTableViewCell.swift */,
 				B63E7CBD205C6C2800F6E26C /* FeedTableViewCell.xib */,
+				B60FEAA5205EDE9F001E2BAB /* PaginationControl.swift */,
+				B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E96F5F205B7D5D002D15B7 /* LaunchScreen.storyboard in Resources */,
+				B60FEAA8205EDEBF001E2BAB /* PaginationControl.xib in Resources */,
 				B63E7CBE205C6C2800F6E26C /* FeedTableViewCell.xib in Resources */,
 				B6E96F5C205B7D5D002D15B7 /* Assets.xcassets in Resources */,
 				B6E96F6C205B7E96002D15B7 /* Feed.storyboard in Resources */,
@@ -334,6 +341,7 @@
 				B62B8F6C205DE43B00BAB84D /* WebViewViewModel.swift in Sources */,
 				B6E96F70205B7F83002D15B7 /* RootViewController.swift in Sources */,
 				B63E7CC3205C873800F6E26C /* FeedTableDataSource.swift in Sources */,
+				B60FEAA6205EDE9F001E2BAB /* PaginationControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

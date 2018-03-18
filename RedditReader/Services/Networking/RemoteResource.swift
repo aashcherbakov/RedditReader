@@ -15,6 +15,7 @@ public class RemoteResource: Resource {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionTask?
 
+    var batch: PostBatch?
     var posts: [Post] = []
     var errorMessage = ""
 
@@ -29,7 +30,7 @@ public class RemoteResource: Resource {
                 self.errorMessage += "Error: " + error.localizedDescription
             } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 self.updateSearchResults(data)
-                DispatchQueue.main.async { completion(self.posts, self.errorMessage) }
+                DispatchQueue.main.async { completion(self.batch, self.errorMessage) }
             }
         }
 
@@ -47,12 +48,20 @@ public class RemoteResource: Resource {
             return
         }
 
-        guard let base = response!["data"] as? [String: Any], let postsArray = base["children"] as? [Any] else {
+        guard
+            let base = response!["data"] as? [String: Any],
+            let postsArray = base["children"] as? [Any]
+        else {
             errorMessage += "Dictionary does not contain results key\n"
             return
         }
 
+        let before = base["before"] as? String
+        let after = base["after"] as? String
+        let distance = base["dist"] as? Int
+
         parsePosts(from: postsArray)
+        batch = PostBatch(posts: posts, after: after, before: before, distance: distance)
     }
 
     private func parsePosts(from array: [Any]) {

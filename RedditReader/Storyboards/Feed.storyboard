@@ -19,20 +19,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4OO-bM-DUH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnC-Qk-8q8" customClass="PaginationControl" customModule="RedditReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mYw-gU-4p4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vnC-Qk-8q8" firstAttribute="leading" secondItem="tba-zJ-YfZ" secondAttribute="leading" id="3zI-ye-yVL"/>
+                            <constraint firstItem="vnC-Qk-8q8" firstAttribute="top" secondItem="4OO-bM-DUH" secondAttribute="bottom" id="7dQ-LO-bcg"/>
                             <constraint firstItem="4OO-bM-DUH" firstAttribute="top" secondItem="ICU-cm-lZ2" secondAttribute="top" id="Ipw-HP-2Dg"/>
+                            <constraint firstItem="vnC-Qk-8q8" firstAttribute="trailing" secondItem="tba-zJ-YfZ" secondAttribute="trailing" id="MDu-mX-EUz"/>
                             <constraint firstItem="4OO-bM-DUH" firstAttribute="leading" secondItem="tba-zJ-YfZ" secondAttribute="leading" id="Yx0-0V-eWD"/>
                             <constraint firstItem="4OO-bM-DUH" firstAttribute="trailing" secondItem="tba-zJ-YfZ" secondAttribute="trailing" id="hfk-pV-XEJ"/>
-                            <constraint firstItem="4OO-bM-DUH" firstAttribute="bottom" secondItem="tba-zJ-YfZ" secondAttribute="bottom" id="oNC-Sf-ZoI"/>
+                            <constraint firstItem="vnC-Qk-8q8" firstAttribute="bottom" secondItem="tba-zJ-YfZ" secondAttribute="bottom" id="yvi-Zc-cnj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tba-zJ-YfZ"/>
                     </view>
                     <connections>
+                        <outlet property="paginationControl" destination="vnC-Qk-8q8" id="vKf-2R-Xvo"/>
                         <outlet property="tableView" destination="4OO-bM-DUH" id="dMz-fd-92n"/>
                     </connections>
                 </viewController>
