@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Central class used for dependency injection and initial routing setup
 public class AppEnvironment {
 
     private weak var window: UIWindow?

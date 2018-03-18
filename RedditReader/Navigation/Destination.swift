@@ -8,9 +8,13 @@
 
 import Foundation
 
+/// Enum that lists all possible screens user can reach in the app
+///
+/// - feed: FeedViewController
+/// - webView: WebViewViewController
 public enum Destination {
 
     case feed
-    case imageView
+    case webView
     
 }

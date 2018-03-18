@@ -10,14 +10,15 @@ import Foundation
 
 public typealias JSONDictionary = [String: Any]
 
+/// Class responsible for reaching out to a server and initial JSON transformation
 public class RemoteResource: Resource {
 
-    let defaultSession = URLSession(configuration: .default)
-    var dataTask: URLSessionTask?
+    private let defaultSession = URLSession(configuration: .default)
+    private var dataTask: URLSessionTask?
 
-    var batch: PostBatch?
-    var posts: [Post] = []
-    var errorMessage = ""
+    private var batch: PostBatch?
+    private var posts: [Post] = []
+    private var errorMessage = ""
 
     public func getFeed(url: String, completion: @escaping Result) {
         dataTask?.cancel()
@@ -37,6 +38,8 @@ public class RemoteResource: Resource {
         dataTask?.resume()
     }
 
+    // MARK: - Private functions
+    
     private func updateSearchResults(_ data: Data) {
         var response: JSONDictionary?
         posts.removeAll()

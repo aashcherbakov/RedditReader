@@ -11,11 +11,12 @@
 		B60FEAA6205EDE9F001E2BAB /* PaginationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA5205EDE9F001E2BAB /* PaginationControl.swift */; };
 		B60FEAA8205EDEBF001E2BAB /* PaginationControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */; };
 		B60FEAAA205EEEFC001E2BAB /* FeedUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA9205EEEFC001E2BAB /* FeedUrlFactory.swift */; };
+		B60FEAAC205F2649001E2BAB /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAAB205F2649001E2BAB /* LayoutExtensions.swift */; };
 		B62B8F65205DC26C00BAB84D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F64205DC26C00BAB84D /* Router.swift */; };
 		B62B8F68205DC81F00BAB84D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F67205DC81F00BAB84D /* WebViewController.swift */; };
 		B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */; };
 		B62B8F6C205DE43B00BAB84D /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F6B205DE43B00BAB84D /* WebViewViewModel.swift */; };
-		B62B8F6F205DE55500BAB84D /* URLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F6E205DE55500BAB84D /* URLError.swift */; };
+		B62B8F6F205DE55500BAB84D /* InvalidUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F6E205DE55500BAB84D /* InvalidUrlError.swift */; };
 		B62B8F71205DE63C00BAB84D /* Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F70205DE63C00BAB84D /* Transferable.swift */; };
 		B63E7CB2205C2B3900F6E26C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB1205C2B3900F6E26C /* Resource.swift */; };
 		B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */; };
@@ -39,7 +40,6 @@
 		B6E96F79205B80C8002D15B7 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F78205B80C8002D15B7 /* Presenter.swift */; };
 		B6E96F7B205B80EE002D15B7 /* NavigationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F7A205B80EE002D15B7 /* NavigationType.swift */; };
 		B6E96F7D205B8140002D15B7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F7C205B8140002D15B7 /* BaseViewController.swift */; };
-		B6E96F80205B8181002D15B7 /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F7F205B8181002D15B7 /* LayoutExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,11 +47,12 @@
 		B60FEAA5205EDE9F001E2BAB /* PaginationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationControl.swift; sourceTree = "<group>"; };
 		B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaginationControl.xib; sourceTree = "<group>"; };
 		B60FEAA9205EEEFC001E2BAB /* FeedUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUrlFactory.swift; sourceTree = "<group>"; };
+		B60FEAAB205F2649001E2BAB /* LayoutExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
 		B62B8F64205DC26C00BAB84D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B62B8F67205DC81F00BAB84D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = RedditReader/Navigation/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		B62B8F6B205DE43B00BAB84D /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
-		B62B8F6E205DE55500BAB84D /* URLError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLError.swift; sourceTree = "<group>"; };
+		B62B8F6E205DE55500BAB84D /* InvalidUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidUrlError.swift; sourceTree = "<group>"; };
 		B62B8F70205DE63C00BAB84D /* Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transferable.swift; sourceTree = "<group>"; };
 		B63E7CB1205C2B3900F6E26C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		B63E7CB3205C2B5F00F6E26C /* RemoteResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		B6E96F78205B80C8002D15B7 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		B6E96F7A205B80EE002D15B7 /* NavigationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationType.swift; sourceTree = "<group>"; };
 		B6E96F7C205B8140002D15B7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		B6E96F7F205B8181002D15B7 /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,19 +91,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B62B8F66205DC80C00BAB84D /* ImageViewer */ = {
+		B62B8F66205DC80C00BAB84D /* WebViewer */ = {
 			isa = PBXGroup;
 			children = (
 				B62B8F67205DC81F00BAB84D /* WebViewController.swift */,
 				B62B8F6B205DE43B00BAB84D /* WebViewViewModel.swift */,
 			);
-			path = ImageViewer;
+			path = WebViewer;
 			sourceTree = "<group>";
 		};
 		B62B8F6D205DE53000BAB84D /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				B62B8F6E205DE55500BAB84D /* URLError.swift */,
+				B62B8F6E205DE55500BAB84D /* InvalidUrlError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 		B6E96F66205B7DE4002D15B7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B62B8F66205DC80C00BAB84D /* ImageViewer */,
+				B62B8F66205DC80C00BAB84D /* WebViewer */,
 				B6E96F67205B7DF5002D15B7 /* Feed */,
 				B6E96F7C205B8140002D15B7 /* BaseViewController.swift */,
 				B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */,
@@ -238,7 +238,7 @@
 		B6E96F7E205B8173002D15B7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B6E96F7F205B8181002D15B7 /* LayoutExtensions.swift */,
+				B60FEAAB205F2649001E2BAB /* LayoutExtensions.swift */,
 				B63E7CC5205CA48C00F6E26C /* UIImageView+Extensions.swift */,
 			);
 			path = Utilities;
@@ -334,13 +334,13 @@
 				B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */,
 				B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */,
 				B6E96F73205B801B002D15B7 /* AppEnvironment.swift in Sources */,
-				B62B8F6F205DE55500BAB84D /* URLError.swift in Sources */,
+				B62B8F6F205DE55500BAB84D /* InvalidUrlError.swift in Sources */,
+				B60FEAAC205F2649001E2BAB /* LayoutExtensions.swift in Sources */,
 				B6E96F77205B8078002D15B7 /* Destination.swift in Sources */,
 				B6E96F7D205B8140002D15B7 /* BaseViewController.swift in Sources */,
 				B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */,
 				B63E7CC6205CA48C00F6E26C /* UIImageView+Extensions.swift in Sources */,
 				B6E96F75205B8053002D15B7 /* ControllerFactory.swift in Sources */,
-				B6E96F80205B8181002D15B7 /* LayoutExtensions.swift in Sources */,
 				B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */,
 				B62B8F6C205DE43B00BAB84D /* WebViewViewModel.swift in Sources */,
 				B6E96F70205B7F83002D15B7 /* RootViewController.swift in Sources */,

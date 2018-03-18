@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Enum that describes used navigation patterns
 public enum NavigationType {
     case push
     case modal

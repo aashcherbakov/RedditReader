@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Class responsible for navigation within the app
 public class Router {
 
     private weak var controllerFactory: ControllerFactory!
@@ -16,6 +17,13 @@ public class Router {
         self.controllerFactory = factory
     }
 
+    /// Moves app flow from current screen to provided destination
+    ///
+    /// - Parameters:
+    ///   - destination: Destination enum value
+    ///   - presenter: ViewController that is currently on screen
+    ///   - navigationType: NavigationType enum value
+    ///   - parameters: Transferable object that holds parameters for Destination screen
     func navigate(
         to destination: Destination,
         presenter: Presenter?,

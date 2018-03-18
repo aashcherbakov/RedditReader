@@ -8,4 +8,5 @@
 
 import Foundation
 
+/// Unifying protocol for Data Transfer Objects to be passed to any screen
 public protocol Transferable { }

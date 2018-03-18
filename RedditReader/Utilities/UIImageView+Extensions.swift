@@ -10,6 +10,7 @@ import UIKit
 
 extension UIImageView {
 
+    /// Loads image from provided url
     func loadImageFrom(url: String?) {
         guard let url = url else { return }
         URLSession.shared.dataTask(with: NSURL(string: url)! as URL, completionHandler: { (data, response, error) -> Void in
