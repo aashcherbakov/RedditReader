@@ -44,15 +44,24 @@ public class FeedViewModel {
     }
 
     func loadPrevious() {
-        guard let before = batch?.before, let count = batch?.distance else { return }
         presenter?.showActivityIndicator()
-        resource.getFeed(url: Constants.feedUrl + "?count=\(count - 25)&before=\(before)", completion: completion)
+        var url: String
+
+        if let before = batch?.before, let count = batch?.distance {
+            url = Constants.feedUrl + "?count=\(count - 25)&before=\(before)"
+        } else {
+            url = Constants.feedUrl
+        }
+
+        resource.getFeed(url: url, completion: completion)
+
     }
 
-    private func completion(batch: PostBatch?, error: String) {
+    private func completion(newBatch: PostBatch?, error: String) {
         presenter?.hideActivityIndicator()
-        if let batch = batch {
-            createDisplays(from: batch.posts)
+        if let loadedBatch = newBatch {
+            batch = loadedBatch
+            createDisplays(from: loadedBatch.posts)
             onStateChange?(.complete)
         } else {
             onStateChange?(.error)

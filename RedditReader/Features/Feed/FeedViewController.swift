@@ -25,6 +25,7 @@ public class FeedViewController: BaseViewController {
         super.viewDidLoad()
 
         setupDesign()
+        setupEvents()
         viewModel.onStateChange = onStateChange
         viewModel.loadFeed()
     }
@@ -33,17 +34,40 @@ public class FeedViewController: BaseViewController {
         switch state {
         case .complete:
             tableView.reloadData()
+            tableView.selectRow(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .top)
         default:
             return
         }
     }
 
+    private func setupEvents() {
+        paginationControl.onNextButtonTap = onNextButtonTap
+        paginationControl.onPreviousButtonTap = onPreviousButtonTap
+    }
+
     private func setupDesign() {
+        setupTableView()
+        setupPaginationControlsView()
+    }
+
+    private func setupTableView() {
         tableDataSource = FeedTableDataSource(viewModel: viewModel)
         tableView.estimatedRowHeight = Constants.rowHeight
         tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedTableViewCell")
         tableView.dataSource = tableDataSource
         tableView.delegate = self
+    }
+
+    private func setupPaginationControlsView() {
+        paginationControl.layout()
+    }
+
+    private func onNextButtonTap() {
+        viewModel.loadNext()
+    }
+
+    private func onPreviousButtonTap() {
+        viewModel.loadPrevious()
     }
 }
 

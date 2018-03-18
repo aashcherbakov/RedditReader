@@ -25,10 +25,16 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-Gt-b4h">
                     <rect key="frame" x="284" y="17" width="51" height="30"/>
                     <state key="normal" title="&lt;Next&gt;"/>
+                    <connections>
+                        <action selector="onNextTap:" destination="-1" eventType="touchUpInside" id="Yx4-UZ-X32"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFV-Re-xsl">
                     <rect key="frame" x="16" y="17" width="78" height="30"/>
                     <state key="normal" title="&lt;Previous&gt;"/>
+                    <connections>
+                        <action selector="onPreviousTap:" destination="-1" eventType="touchUpInside" id="p0O-lL-1Ae"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,7 +46,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="22.5" y="-247"/>
+            <point key="canvasLocation" x="144" y="-231"/>
         </view>
     </objects>
 </document>

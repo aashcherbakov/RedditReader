@@ -14,6 +14,11 @@ public class PaginationControl: UIView {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
 
+    var onNextButtonTap: (() -> Void)?
+    var onPreviousButtonTap: (() -> Void)?
+
+    // MARK: - Overridden functions
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -24,11 +29,31 @@ public class PaginationControl: UIView {
         commonInit()
     }
 
+    // MARK: - Public functions
+
+    func layout() {
+        nextButton.setTitle("NEXT", for: .normal)
+        previousButton.setTitle("PREVIOUS", for: .normal)
+    }
+
+    // MARK: - Actions
+
+    @IBAction private func onPreviousTap(_ sender: Any) {
+        onPreviousButtonTap?()
+    }
+
+    @IBAction private func onNextTap(_ sender: Any) {
+        onNextButtonTap?()
+    }
+
+    // MARK: - Private functions
+
     private func commonInit() {
         Bundle.main.loadNibNamed("PaginationControl", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+
 }
 
