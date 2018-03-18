@@ -32,9 +32,11 @@ public class FeedViewController: BaseViewController {
 
     private func onStateChange(state: FeedViewModel.State) {
         switch state {
-        case .complete:
+        case .complete(let distance):
             tableView.reloadData()
             tableView.selectRow(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .top)
+            paginationControl.layout(withPreviousHidden: viewModel.shouldDisplayPreviousButton())
+            navigationItem.title = distance
         default:
             return
         }
@@ -59,7 +61,7 @@ public class FeedViewController: BaseViewController {
     }
 
     private func setupPaginationControlsView() {
-        paginationControl.layout()
+        paginationControl.layout(withPreviousHidden: true)
     }
 
     private func onNextButtonTap() {

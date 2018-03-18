@@ -12,16 +12,18 @@ public class FeedViewModel {
 
     private struct Constants {
         static let feedUrl = "https://www.reddit.com/top.json"
+        static let batchSize = 25
     }
 
     enum State {
         case error
-        case complete
+        case complete(pages: String)
     }
 
     private let resource: Resource
     private let router: Router
     private var batch: PostBatch?
+    private var distance: Int = Constants.batchSize
 
     var onStateChange: ((State) -> Void)?
     var displays: [FeedTableCellDisplay] = []
@@ -40,21 +42,23 @@ public class FeedViewModel {
     func loadNext() {
         guard let after = batch?.after, let count = batch?.distance else { return }
         presenter?.showActivityIndicator()
-        resource.getFeed(url: Constants.feedUrl + "?count=\(count + 25)&after=\(after)", completion: completion)
+        distance += Constants.batchSize
+        resource.getFeed(url: Constants.feedUrl + "?count=\(count + Constants.batchSize)&after=\(after)", completion: completion)
     }
 
     func loadPrevious() {
         presenter?.showActivityIndicator()
+        distance -= Constants.batchSize
+
         var url: String
 
-        if let before = batch?.before, let count = batch?.distance {
-            url = Constants.feedUrl + "?count=\(count - 25)&before=\(before)"
+        if let before = batch?.before, let count = batch?.distance, distance > Constants.batchSize {
+            url = Constants.feedUrl + "?count=\(count - Constants.batchSize)&before=\(before)"
         } else {
             url = Constants.feedUrl
         }
 
         resource.getFeed(url: url, completion: completion)
-
     }
 
     private func completion(newBatch: PostBatch?, error: String) {
@@ -62,7 +66,7 @@ public class FeedViewModel {
         if let loadedBatch = newBatch {
             batch = loadedBatch
             createDisplays(from: loadedBatch.posts)
-            onStateChange?(.complete)
+            onStateChange?(.complete(pages: createPagesDisplay()))
         } else {
             onStateChange?(.error)
         }
@@ -78,6 +82,18 @@ public class FeedViewModel {
         case .link(let url):
             router.navigate(to: .imageView, presenter: presenter, navigationType: .push, parameters: WebViewParameters(imageUrl: url))
         case .undefined: break
+        }
+    }
+
+    func shouldDisplayPreviousButton() -> Bool {
+        return distance <= 25
+    }
+
+    private func createPagesDisplay() -> String {
+        if distance == Constants.batchSize {
+            return "First 25 entries"
+        } else {
+            return "Entries \(distance - Constants.batchSize) to \(distance)"
         }
     }
 

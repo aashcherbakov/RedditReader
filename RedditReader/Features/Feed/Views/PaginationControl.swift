@@ -31,9 +31,10 @@ public class PaginationControl: UIView {
 
     // MARK: - Public functions
 
-    func layout() {
+    func layout(withPreviousHidden previousHidden: Bool) {
         nextButton.setTitle("NEXT", for: .normal)
         previousButton.setTitle("PREVIOUS", for: .normal)
+        previousButton.isHidden = previousHidden
     }
 
     // MARK: - Actions
