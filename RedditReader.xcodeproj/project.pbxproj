@@ -10,6 +10,7 @@
 		B60FEAA4205E09D2001E2BAB /* PostBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA3205E09D2001E2BAB /* PostBatch.swift */; };
 		B60FEAA6205EDE9F001E2BAB /* PaginationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA5205EDE9F001E2BAB /* PaginationControl.swift */; };
 		B60FEAA8205EDEBF001E2BAB /* PaginationControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */; };
+		B60FEAAA205EEEFC001E2BAB /* FeedUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60FEAA9205EEEFC001E2BAB /* FeedUrlFactory.swift */; };
 		B62B8F65205DC26C00BAB84D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F64205DC26C00BAB84D /* Router.swift */; };
 		B62B8F68205DC81F00BAB84D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F67205DC81F00BAB84D /* WebViewController.swift */; };
 		B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */; };
@@ -45,6 +46,7 @@
 		B60FEAA3205E09D2001E2BAB /* PostBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBatch.swift; sourceTree = "<group>"; };
 		B60FEAA5205EDE9F001E2BAB /* PaginationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationControl.swift; sourceTree = "<group>"; };
 		B60FEAA7205EDEBF001E2BAB /* PaginationControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaginationControl.xib; sourceTree = "<group>"; };
+		B60FEAA9205EEEFC001E2BAB /* FeedUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUrlFactory.swift; sourceTree = "<group>"; };
 		B62B8F64205DC26C00BAB84D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B62B8F67205DC81F00BAB84D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B62B8F69205DC9B600BAB84D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = RedditReader/Navigation/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
@@ -194,6 +196,7 @@
 				B63E7CBA205C6BE400F6E26C /* Views */,
 				B6E96F68205B7E3C002D15B7 /* FeedViewController.swift */,
 				B63E7CB8205C30BB00F6E26C /* FeedViewModel.swift */,
+				B60FEAA9205EEEFC001E2BAB /* FeedUrlFactory.swift */,
 				B63E7CC2205C873800F6E26C /* FeedTableDataSource.swift */,
 			);
 			path = Feed;
@@ -327,6 +330,7 @@
 				B62B8F65205DC26C00BAB84D /* Router.swift in Sources */,
 				B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */,
 				B60FEAA4205E09D2001E2BAB /* PostBatch.swift in Sources */,
+				B60FEAAA205EEEFC001E2BAB /* FeedUrlFactory.swift in Sources */,
 				B63E7CB7205C2DDC00F6E26C /* Post.swift in Sources */,
 				B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */,
 				B6E96F73205B801B002D15B7 /* AppEnvironment.swift in Sources */,

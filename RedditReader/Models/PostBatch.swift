@@ -12,13 +12,11 @@ public struct PostBatch {
 
     let after: String?
     let before: String?
-    let distance: Int?
     let posts: [Post]
 
-    init(posts: [Post], after: String?, before: String?, distance: Int?) {
+    init(posts: [Post], after: String?, before: String?) {
         self.posts = posts
         self.after = after
         self.before = before
-        self.distance = distance
     }
 }

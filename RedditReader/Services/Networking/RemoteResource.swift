@@ -58,10 +58,9 @@ public class RemoteResource: Resource {
 
         let before = base["before"] as? String
         let after = base["after"] as? String
-        let distance = base["dist"] as? Int
 
         parsePosts(from: postsArray)
-        batch = PostBatch(posts: posts, after: after, before: before, distance: distance)
+        batch = PostBatch(posts: posts, after: after, before: before)
     }
 
     private func parsePosts(from array: [Any]) {

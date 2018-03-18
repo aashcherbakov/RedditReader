@@ -6,21 +6,24 @@
 //  Copyright © 2018 Oleks Shcherbakov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+/// BaseViewController subclass used to display Reddit feed
 public class FeedViewController: BaseViewController {
 
     private struct Constants {
         static let rowHeight = 100 as CGFloat
     }
 
-    var viewModel: FeedViewModel!
-    var tableDataSource: FeedTableDataSource?
+    private var tableDataSource: FeedTableDataSource?
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var paginationControl: PaginationControl!
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var paginationControl: PaginationControl!
-    
+    /// Feed viewModel
+    var viewModel: FeedViewModel!
+
+    // MARK: - Overridden
+
     public override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +32,8 @@ public class FeedViewController: BaseViewController {
         viewModel.onStateChange = onStateChange
         viewModel.loadFeed()
     }
+
+    // MARK: - Private function
 
     private func onStateChange(state: FeedViewModel.State) {
         switch state {
@@ -66,6 +71,8 @@ public class FeedViewController: BaseViewController {
         paginationControl.layout(withPreviousHidden: true)
     }
 
+    // MARK: - Actions
+
     private func onNextButtonTap() {
         viewModel.loadNext()
     }
@@ -75,6 +82,7 @@ public class FeedViewController: BaseViewController {
     }
 }
 
+// MARK: - UITableViewDelegate extension
 extension FeedViewController: UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

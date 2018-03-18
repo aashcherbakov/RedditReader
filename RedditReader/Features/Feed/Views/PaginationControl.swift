@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// UIView subclass that is used to control pagination of the Feed
 public class PaginationControl: UIView {
 
     @IBOutlet var contentView: UIView!

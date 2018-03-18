@@ -10,7 +10,7 @@ import UIKit
 
 public class FeedViewModel {
 
-    private struct Constants {
+    struct Constants {
         static let feedUrl = "https://www.reddit.com/top.json"
         static let batchSize = 25
     }
@@ -24,6 +24,7 @@ public class FeedViewModel {
     private let router: Router
     private var batch: PostBatch?
     private var distance: Int = Constants.batchSize
+    private let urlFactory = FeedUrlFactory()
 
     var onStateChange: ((State) -> Void)?
     var displays: [FeedTableCellDisplay] = []
@@ -40,25 +41,16 @@ public class FeedViewModel {
     }
 
     func loadNext() {
-        guard let after = batch?.after, let count = batch?.distance else { return }
+        guard let after = batch?.after else { return }
         presenter?.showActivityIndicator()
         distance += Constants.batchSize
-        resource.getFeed(url: Constants.feedUrl + "?count=\(count + Constants.batchSize)&after=\(after)", completion: loadBatchCompleted)
+        resource.getFeed(url: urlFactory.buildUrl(for: .next(after: after)), completion: loadBatchCompleted)
     }
 
     func loadPrevious() {
         presenter?.showActivityIndicator()
         distance -= Constants.batchSize
-
-        var url: String
-
-        if let before = batch?.before, let count = batch?.distance, distance > Constants.batchSize {
-            url = Constants.feedUrl + "?count=\(count - Constants.batchSize)&before=\(before)"
-        } else {
-            url = Constants.feedUrl
-        }
-
-        resource.getFeed(url: url, completion: loadBatchCompleted)
+        resource.getFeed(url: urlFactory.buildUrl(for: .previous(before: batch?.before, distance: distance)), completion: loadBatchCompleted)
     }
 
     func shouldDisplayPreviousButton() -> Bool {

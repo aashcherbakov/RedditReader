@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Cell that displays short content of each post
 public class FeedTableViewCell: UITableViewCell {
 
     private struct Constants {
@@ -21,18 +22,21 @@ public class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
 
+    // MARK: - Overridden
+
     public override func awakeFromNib() {
         super.awakeFromNib()
-
         resetValues()
     }
 
     public override func prepareForReuse() {
         super.prepareForReuse()
-
         resetValues()
     }
 
+    /// Lays out textfield and starts loading image
+    ///
+    /// - Parameter display: FeedTableCellDisplay
     func layout(with display: FeedTableCellDisplay) {
         nameLabel.text = display.author
         titleLabel.text = display.title
@@ -45,6 +49,8 @@ public class FeedTableViewCell: UITableViewCell {
             imageViewWidthConstraint.constant = 0
         }
     }
+
+    // MARK: - Private functions
 
     private func resetValues() {
         nameLabel.text = nil
