@@ -24,4 +24,9 @@ public protocol Presenter: class {
     ///   - navigationType: NavigationType enum value
     func present(controller: Presenter, navigationType: NavigationType)
 
+    /// Presents UIAlertViewController with alert of provided type
+    ///
+    /// - Parameter type: AlertType
+    func displayAlert(for type: AlertType)
+
 }

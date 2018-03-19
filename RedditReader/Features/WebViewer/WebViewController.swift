@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-public class WebViewController: BaseViewController, WKNavigationDelegate {
+public class WebViewController: BaseViewController {
 
     @IBOutlet weak var webView: WKWebView!
     var viewModel: WebViewViewModel!
@@ -17,19 +17,26 @@ public class WebViewController: BaseViewController, WKNavigationDelegate {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.didStartRequest()
-        do {
-            let request = try viewModel.requestUrl()
-            webView.navigationDelegate = self
-            webView.load(request)
-        } catch InvalidUrlError.invalidString(let string) {
-            print("Invalid url \(string)")
-        } catch {
-            print("Unexpected error")
-        }
+        setupData()
     }
+
+    private func setupData() {
+        viewModel.didStartRequest()
+        guard let request = viewModel.requestUrl() else {
+            return
+        }
+
+        webView.navigationDelegate = self
+        webView.load(request)
+    }
+
+}
+
+// MARK: - WKNavigationDelegate
+extension WebViewController: WKNavigationDelegate {
 
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         viewModel.didCompleteRequest()
     }
+
 }

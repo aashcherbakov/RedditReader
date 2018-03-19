@@ -8,8 +8,16 @@
 
 import UIKit
 
+/// Base class for any UINavigationController in the app.
 public class BaseNavigationController: UINavigationController, Presenter {
-    
+
+    private let alertBuilder = AlertControllerBuilder()
+
+    public func displayAlert(for type: AlertType) {
+        let alertController = alertBuilder.build(from: type)
+        topViewController?.present(alertController, animated: true, completion: nil)
+    }
+
     public func showActivityIndicator() {
         let topController = topViewController as? Presenter
         topController?.showActivityIndicator()

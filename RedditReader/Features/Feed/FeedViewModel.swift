@@ -78,6 +78,7 @@ public class FeedViewModel {
             onStateChange?(.complete(pages: createPagesDisplay()))
         } else {
             onStateChange?(.error)
+            presenter?.displayAlert(for: .error(message: error))
         }
     }
 

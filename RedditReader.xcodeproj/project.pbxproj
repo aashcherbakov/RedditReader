@@ -29,6 +29,8 @@
 		B63E7CC1205C70C100F6E26C /* FeedTableCellDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CC0205C70C100F6E26C /* FeedTableCellDisplay.swift */; };
 		B63E7CC3205C873800F6E26C /* FeedTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CC2205C873800F6E26C /* FeedTableDataSource.swift */; };
 		B63E7CC6205CA48C00F6E26C /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E7CC5205CA48C00F6E26C /* UIImageView+Extensions.swift */; };
+		B6AAD55B205F39F30099E404 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AAD55A205F39F30099E404 /* AlertFactory.swift */; };
+		B6AAD55D205F3D450099E404 /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AAD55C205F3D450099E404 /* AlertControllerBuilder.swift */; };
 		B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */; };
 		B6E96F5A205B7D5D002D15B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F58205B7D5D002D15B7 /* Main.storyboard */; };
 		B6E96F5C205B7D5D002D15B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E96F5B205B7D5D002D15B7 /* Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		B63E7CC0205C70C100F6E26C /* FeedTableCellDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableCellDisplay.swift; sourceTree = "<group>"; };
 		B63E7CC2205C873800F6E26C /* FeedTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableDataSource.swift; sourceTree = "<group>"; };
 		B63E7CC5205CA48C00F6E26C /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		B6AAD55A205F39F30099E404 /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
+		B6AAD55C205F3D450099E404 /* AlertControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerBuilder.swift; sourceTree = "<group>"; };
 		B6E96F51205B7D5D002D15B7 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E96F54205B7D5D002D15B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E96F59205B7D5D002D15B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 			path = Displays;
 			sourceTree = "<group>";
 		};
+		B6AAD559205F39E40099E404 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				B6AAD55A205F39F30099E404 /* AlertFactory.swift */,
+				B6AAD55C205F3D450099E404 /* AlertControllerBuilder.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		B6E96F48205B7D5D002D15B7 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +255,7 @@
 		B6E96F71205B800F002D15B7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B6AAD559205F39E40099E404 /* Alerts */,
 				B62B8F6D205DE53000BAB84D /* Errors */,
 				B63E7CB0205C2B2900F6E26C /* Networking */,
 				B6E96F72205B801B002D15B7 /* AppEnvironment.swift */,
@@ -344,6 +358,7 @@
 				B62B8F65205DC26C00BAB84D /* Router.swift in Sources */,
 				B62B8F6A205DC9B600BAB84D /* BaseNavigationController.swift in Sources */,
 				B60FEAAF205F2BF5001E2BAB /* ImageViewController.swift in Sources */,
+				B6AAD55B205F39F30099E404 /* AlertFactory.swift in Sources */,
 				B60FEAA4205E09D2001E2BAB /* PostBatch.swift in Sources */,
 				B60FEAAA205EEEFC001E2BAB /* FeedUrlFactory.swift in Sources */,
 				B60FEAB1205F2F03001E2BAB /* ImageViewViewModel.swift in Sources */,
@@ -357,6 +372,7 @@
 				B63E7CB4205C2B5F00F6E26C /* RemoteResource.swift in Sources */,
 				B63E7CC6205CA48C00F6E26C /* UIImageView+Extensions.swift in Sources */,
 				B6E96F75205B8053002D15B7 /* ControllerFactory.swift in Sources */,
+				B6AAD55D205F3D450099E404 /* AlertControllerBuilder.swift in Sources */,
 				B6E96F55205B7D5D002D15B7 /* AppDelegate.swift in Sources */,
 				B62B8F6C205DE43B00BAB84D /* WebViewViewModel.swift in Sources */,
 				B6E96F70205B7F83002D15B7 /* RootViewController.swift in Sources */,

@@ -8,9 +8,11 @@
 
 import UIKit
 
+/// Base class for UIViewControllers that are used in the app. Conforms to Presenter protocol
 public class BaseViewController: UIViewController {
 
     private var activityIndicator: UIActivityIndicatorView!
+    private let alertBuilder = AlertControllerBuilder()
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,11 @@ public class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: Presenter {
+
+    public func displayAlert(for type: AlertType) {
+        let alertController = alertBuilder.build(from: type)
+        present(alertController, animated: true, completion: nil)
+    }
 
     public func present(controller: Presenter, navigationType: NavigationType) {
         guard let controller = controller as? UIViewController else {

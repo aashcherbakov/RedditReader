@@ -22,13 +22,17 @@ public class WebViewViewModel {
         self.imageUrl = (parameters as! WebViewParameters).imageUrl
     }
 
-    func requestUrl() throws -> URLRequest {
-        guard let url = URL(string: imageUrl) else {
-            throw InvalidUrlError.invalidString(url: imageUrl)
+    func requestUrl() -> URLRequest? {
+        var request: URLRequest
+        do {
+            request = try tryCreateUrlRequest()
+            return request
+        } catch InvalidUrlError.invalidString(let string) {
+            presenter?.displayAlert(for: .error(message: string))
+        } catch {
+            presenter?.displayAlert(for: .error(message: "Unexpected error"))
         }
-
-        let request = URLRequest(url: url)
-        return request
+        return nil
     }
 
     func didStartRequest() {
@@ -38,5 +42,17 @@ public class WebViewViewModel {
     func didCompleteRequest() {
         presenter?.hideActivityIndicator()
     }
+
+    // MARK: - Private functions
+
+    private func tryCreateUrlRequest() throws -> URLRequest {
+        guard let url = URL(string: imageUrl) else {
+            throw InvalidUrlError.invalidString(url: imageUrl)
+        }
+
+        let request = URLRequest(url: url)
+        return request
+    }
+
 
 }
