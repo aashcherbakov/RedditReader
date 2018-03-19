@@ -17,10 +17,13 @@ extension UIImageView {
         guard let url = url else { return }
         URLSession.shared.dataTask(with: NSURL(string: url)! as URL, completionHandler: { (data, response, error) -> Void in
 
-            activityIndicator.stopAnimating()
-            activityIndicator.removeFromSuperview()
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+            }
 
             if error != nil { return }
+            
             DispatchQueue.main.async(execute: { () -> Void in
                 let image = UIImage(data: data!)
                 self.image = image

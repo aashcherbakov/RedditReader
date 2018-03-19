@@ -12,7 +12,7 @@ import UIKit
 public class BaseViewController: UIViewController {
 
     private var activityIndicator: UIActivityIndicatorView!
-    private let alertBuilder = AlertControllerBuilder()
+    private lazy var alertBuilder = AlertControllerBuilder()
 
     public override func viewDidLoad() {
         super.viewDidLoad()

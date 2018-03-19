@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AlertControllerBuilder {
+public struct AlertControllerBuilder {
 
     private let displayFactory = AlertFactory()
 

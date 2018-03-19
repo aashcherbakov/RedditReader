@@ -28,7 +28,7 @@ public protocol AlertDisplay {
 }
 
 /// Class responsible for creating AlertDisplays
-public class AlertFactory {
+public struct AlertFactory {
 
     /// Creates display for provided AlertType
     func createDisplay(for alertType: AlertType) -> AlertDisplay {
