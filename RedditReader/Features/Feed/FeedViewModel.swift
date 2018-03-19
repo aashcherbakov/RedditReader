@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// ViewModel for FeedViewController
 public class FeedViewModel {
 
     struct Constants {
@@ -26,7 +27,10 @@ public class FeedViewModel {
     private var distance: Int = Constants.batchSize
     private let urlFactory = FeedUrlFactory()
 
+    /// Function that will be called when State of ViewModel changes
     var onStateChange: ((State) -> Void)?
+
+    /// Displays that represent Posts from reddit
     var displays: [FeedTableCellDisplay] = []
     weak var presenter: Presenter?
 
@@ -35,11 +39,15 @@ public class FeedViewModel {
         self.router = router
     }
 
+    // MARK: - Internal functions
+
+    /// Loads initial page of feed from Reddit
     func loadFeed() {
         presenter?.showActivityIndicator()
         resource.getFeed(url: Constants.feedUrl, completion: loadBatchCompleted)
     }
 
+    /// Loads next 25 posts
     func loadNext() {
         guard let after = batch?.after else { return }
         presenter?.showActivityIndicator()
@@ -47,16 +55,23 @@ public class FeedViewModel {
         resource.getFeed(url: urlFactory.buildUrl(for: .next(after: after)), completion: loadBatchCompleted)
     }
 
+    /// Loads previous 25 posts
     func loadPrevious() {
         presenter?.showActivityIndicator()
         distance -= Constants.batchSize
         resource.getFeed(url: urlFactory.buildUrl(for: .previous(before: batch?.before, distance: distance)), completion: loadBatchCompleted)
     }
 
+    /// Bool that indicates whether ViewController should display "Previous" button
+    ///
+    /// - Returns: Bool
     func shouldDisplayPreviousButton() -> Bool {
         return distance <= 25
     }
 
+    /// Function that indicates that user did tap on one of tableview cells
+    ///
+    /// - Parameter index: index of the cell
     func didSelectDisplay(at index: Int) {
         guard index < displays.count else { return }
 
@@ -70,6 +85,8 @@ public class FeedViewModel {
         }
     }
 
+    // MARK: - Private functions
+    
     private func loadBatchCompleted(newBatch: PostBatch?, error: String) {
         presenter?.hideActivityIndicator()
         if let loadedBatch = newBatch {

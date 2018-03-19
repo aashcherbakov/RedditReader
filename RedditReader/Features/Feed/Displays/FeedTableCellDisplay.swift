@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Display for FeedTableViewCell
 public struct FeedTableCellDisplay {
 
     let title: String?
@@ -26,6 +27,8 @@ public struct FeedTableCellDisplay {
         self.postType = type
     }
 
+    // MARK: - Private functions
+    
     private static func entryDateDescription(from entryDate: Int) -> Int {
         let dateCreated = Date(timeIntervalSince1970: TimeInterval(exactly: entryDate)!)
         let timeSinceNow = dateCreated.timeIntervalSinceNow

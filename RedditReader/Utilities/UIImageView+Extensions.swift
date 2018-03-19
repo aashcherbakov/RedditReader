@@ -32,6 +32,8 @@ extension UIImageView {
         }).resume()
     }
 
+    // MARK: - Private functions
+    
     private func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         addSubview(activityIndicator)

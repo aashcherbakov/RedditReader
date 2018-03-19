@@ -11,9 +11,9 @@ import UIKit
 /// UIView subclass that is used to control pagination of the Feed
 public class PaginationControl: UIView {
 
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet private var contentView: UIView!
+    @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet private weak var previousButton: UIButton!
 
     var onNextButtonTap: (() -> Void)?
     var onPreviousButtonTap: (() -> Void)?

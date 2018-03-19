@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Types of Url parsing errors
 public enum InvalidUrlError: Error {
     case invalidString(url: String)
 }

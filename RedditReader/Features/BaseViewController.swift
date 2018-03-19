@@ -14,6 +14,8 @@ public class BaseViewController: UIViewController {
     private var activityIndicator: UIActivityIndicatorView!
     private lazy var alertBuilder = AlertControllerBuilder()
 
+    // MARK: - Overridden functions
+
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupDesign()
@@ -29,6 +31,7 @@ public class BaseViewController: UIViewController {
 
 }
 
+// MARK: - Presenter
 extension BaseViewController: Presenter {
 
     public func displayAlert(for type: AlertType) {

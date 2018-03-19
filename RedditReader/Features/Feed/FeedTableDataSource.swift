@@ -8,13 +8,19 @@
 
 import UIKit
 
-public class FeedTableDataSource: NSObject, UITableViewDataSource {
+/// Data source for FeedTableView
+public class FeedTableDataSource: NSObject {
 
     private weak var viewModel: FeedViewModel?
 
     init(viewModel: FeedViewModel) {
         self.viewModel = viewModel
     }
+
+}
+
+// MARK: - UITableViewDataSource
+extension FeedTableDataSource: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.displays.count ?? 0
@@ -34,5 +40,4 @@ public class FeedTableDataSource: NSObject, UITableViewDataSource {
 
         return cell
     }
-
 }

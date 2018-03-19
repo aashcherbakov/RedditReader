@@ -8,10 +8,12 @@
 
 import Foundation
 
+/// ViewModel for ImageViewController
 public class ImageViewViewModel {
 
     private weak var presenter: Presenter?
 
+    /// Url for image to download
     let imageUrl: String
 
     init(presenter: Presenter?, parameters: Transferable?) {

@@ -9,10 +9,13 @@
 import UIKit
 import WebKit
 
+/// ViewController responsible for opening links in WKWebView
 public class WebViewController: BaseViewController {
 
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet private weak var webView: WKWebView!
     var viewModel: WebViewViewModel!
+
+    // MARK: - Overridden functions
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,8 @@ public class WebViewController: BaseViewController {
         setupData()
     }
 
+    // MARK: - Private functions
+    
     private func setupData() {
         viewModel.didStartRequest()
         guard let request = viewModel.requestUrl() else {

@@ -9,19 +9,22 @@
 import Foundation
 import UIKit
 
+/// RootViewController of the application. Responsible for presenting initial controller for each flow
 internal final class RootViewController: UIViewController {
 
+    private(set) var currentViewController: UIViewController?
+    @IBOutlet private weak var containerView: UIView!
+
+    // MARK: - Overridden 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return currentViewController?.preferredStatusBarStyle ?? .default
     }
 
-    private(set) var currentViewController: UIViewController?
-    @IBOutlet weak var containerView: UIView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
+    /// Presents given view controller in main container view
     func display(_ viewController: UIViewController, completion transitionComplete: (() -> Void)?) {
         let oldViewController = currentViewController
         let newViewController = viewController

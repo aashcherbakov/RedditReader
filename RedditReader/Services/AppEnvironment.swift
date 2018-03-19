@@ -22,6 +22,7 @@ public class AppEnvironment {
         controllerFactory.router = router
     }
 
+    /// Launches root controller in the window and passes the dependencies
     public func run(in window: UIWindow?) {
         let rootController = controllerFactory.rootController()
         let initialController = controllerFactory.initialController()

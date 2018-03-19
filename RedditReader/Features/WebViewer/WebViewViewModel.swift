@@ -8,10 +8,12 @@
 
 import Foundation
 
+/// Parameters for WebViewController
 public struct WebViewParameters: Transferable {
     let imageUrl: String
 }
 
+/// ViewModel for WebViewController
 public class WebViewViewModel {
 
     private weak var presenter: Presenter?
@@ -22,6 +24,11 @@ public class WebViewViewModel {
         self.imageUrl = (parameters as! WebViewParameters).imageUrl
     }
 
+    // MARK: - Internal functions
+
+    /// Creates an URLRequest to load in WKWebView
+    ///
+    /// - Returns: URLRequest?
     func requestUrl() -> URLRequest? {
         var request: URLRequest
         do {
@@ -35,10 +42,12 @@ public class WebViewViewModel {
         return nil
     }
 
+    /// Function to indicate that request started loading
     func didStartRequest() {
         presenter?.showActivityIndicator()
     }
 
+    /// Function to indicate that request is completed
     func didCompleteRequest() {
         presenter?.hideActivityIndicator()
     }
@@ -53,6 +62,5 @@ public class WebViewViewModel {
         let request = URLRequest(url: url)
         return request
     }
-
 
 }

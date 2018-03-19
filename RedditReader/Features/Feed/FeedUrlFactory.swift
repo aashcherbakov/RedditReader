@@ -8,14 +8,24 @@
 
 import Foundation
 
+/// Enum that discribes types of FeedUrl
+///
+/// - initial: first 25 posts
+/// - next: next 25 posts
+/// - previous: previous 25 posts
 public enum FeedUrlType {
     case initial
     case next(after: String)
     case previous(before: String?, distance: Int)
 }
 
+/// Factory for Feed urls
 public class FeedUrlFactory {
 
+    /// Creates url based on FeedUrlType
+    ///
+    /// - Parameter type: initial, next or previous page
+    /// - Returns: String with URL
     func buildUrl(for type: FeedUrlType) -> String {
         switch type {
         case .initial: return FeedViewModel.Constants.feedUrl
@@ -25,6 +35,8 @@ public class FeedUrlFactory {
             return previousUrl(before: before, distance: distance)
         }
     }
+
+    // MARK: - Private functions
 
     private func nextUrl(after: String) -> String {
         return FeedViewModel.Constants.feedUrl + "?count=\(FeedViewModel.Constants.batchSize)&after=\(after)"

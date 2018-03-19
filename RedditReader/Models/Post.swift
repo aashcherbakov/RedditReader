@@ -8,12 +8,19 @@
 
 import Foundation
 
+
+/// Type of reddit post based on post_hint parameter
+///
+/// - image: contains image
+/// - link: contains link
+/// - undefined: neither (can be extended in future)
 public enum PostType {
     case image(url: String)
     case link(url: String)
     case undefined
 }
 
+/// Representation of single reddit post
 public struct Post {
 
     private enum LinkType: String {

@@ -8,10 +8,12 @@
 
 import UIKit
 
+/// Struct that is responsible for building UIAlertControllers
 public struct AlertControllerBuilder {
 
     private let displayFactory = AlertFactory()
 
+    /// Builds and returns UIAlertController
     func build(from alertType: AlertType) -> UIAlertController {
         let display = displayFactory.createDisplay(for: alertType)
         let controller = UIAlertController(

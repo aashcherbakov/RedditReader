@@ -8,10 +8,16 @@
 
 import Foundation
 
+/// Representation of a batch of posts from reddit
 public struct PostBatch {
 
+    /// id of the "previous" batch
     let after: String?
+
+    /// id of the last batch
     let before: String?
+
+    /// List of posts
     let posts: [Post]
 
     init(posts: [Post], after: String?, before: String?) {
@@ -19,4 +25,5 @@ public struct PostBatch {
         self.after = after
         self.before = before
     }
+    
 }

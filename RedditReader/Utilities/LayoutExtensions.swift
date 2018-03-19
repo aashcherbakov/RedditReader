@@ -10,16 +10,18 @@ import UIKit
 
 public extension UIView {
 
-    private func prepareForProgrammaticLayout() {
-        translatesAutoresizingMaskIntoConstraints = false
-    }
-
     /// Centers self in provided view
     public func centerIn(_ view: UIView) {
         prepareForProgrammaticLayout()
 
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+
+    // MARK: - Private functions
+
+    private func prepareForProgrammaticLayout() {
+        translatesAutoresizingMaskIntoConstraints = false
     }
 
 }

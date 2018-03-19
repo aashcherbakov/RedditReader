@@ -12,6 +12,7 @@ import Foundation
 ///
 /// - feed: FeedViewController
 /// - webView: WebViewViewController
+/// - imageView: ImageViewController
 public enum Destination {
 
     case feed
